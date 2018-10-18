@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, except: %i(create new)
-  before_action :get_payments, only: %i(new edit)
+  before_action :get_payments, except: :show
   before_action :logged_in_user, only: %i(show edit update)
   before_action :correct_user, only: %i(edit update)
 

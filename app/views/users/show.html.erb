@@ -1,7 +1,24 @@
-<div>
-  <aside class="col-md-4">
-    <div>
-      <h1>My profile</h1>
-    </div>
-  </aside>
+<% provide :title, @user.name %>
+<h2><%= t ".my_profile" %></h2>
+
+<div class="card">
+  <%= image_tag @user.avatar.url, :size => Settings.user.avatar_profile %>
+  <h1><%= @user.name %></h1>
+  <p>
+    <%= t ".email" %>
+    <%= @user.email %>
+  </p>
+  <p>
+    <%= t ".birthday" %>
+    <%= @user.dob.strftime(t(".time_default")) %>
+  </p>
+  <p>
+    <%= t ".phone" %>
+    <%= @user.phone_number %>
+  </p>
+  <p>
+    <%= t ".address" %>
+    <%= @user.address %>
+  </p>
+  <p><button><%= link_to t(".update_button"),  edit_user_path %></button></p>
 </div>

@@ -5,12 +5,32 @@ en:
       error: "error"
 
   users:
+    user_not_found: "User not found!"
+    please_login: "Please login!"
     create:
       created_sucess: "Account created sucess!"
       create_failed: "Account created fail, try again!"
     new:
       create_button: "Create"
       signup_title: "Signup"
+
+    edit:
+      update_title: "Update profile"
+      update_button: "Update"
+      update_profile: "Update profile"
+
+    update:
+      updated_success: "User updated success!"
+
+    show:
+      name: "Name: "
+      email: "Email: "
+      birthday: "Birthday: "
+      phone: "Phone number: "
+      address: "Address: "
+      update_button: "Update profile"
+      my_profile: "My profile"
+      time_default: "%d/%m/%Y"
 
   sessions:
     new:

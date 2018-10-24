@@ -3,3 +3,4 @@ user:
   max_name_size: 50
   max_email_size: 255
   min_password_size: 6
+  avatar_profile: 200

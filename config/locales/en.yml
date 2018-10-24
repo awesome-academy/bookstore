@@ -11,3 +11,14 @@ en:
     new:
       create_button: "Create"
       signup_title: "Signup"
+
+  sessions:
+    new:
+      login_title: "Login"
+      login: "Login"
+      log_in_button: "Login"
+      new_user: "New user?"
+      signup_now: "Sign up now!"
+      remember_me: "Remember me on this computer!"
+    create:
+      require_login: "Invalid email/password!"

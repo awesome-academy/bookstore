@@ -42,3 +42,45 @@ en:
       remember_me: "Remember me on this computer!"
     create:
       require_login: "Invalid email/password!"
+
+    update:
+      updated_success: "User updated success!"
+
+    show:
+      name: "Name: "
+      email: "Email: "
+      birthday: "Birthday: "
+      phone: "Phone number: "
+      address: "Address: "
+      update_button: "Update profile"
+      my_profile: "My profile"
+      time_default: "%d/%m/%Y"
+
+  sessions:
+    new:
+      login_title: "Login"
+      login: "Login"
+      log_in_button: "Login"
+      new_user: "New user?"
+      signup_now: "Sign up now!"
+      remember_me: "Remember me on this computer!"
+    create:
+      require_login: "Invalid email/password!"
+
+  admin:
+    books:
+      index:
+        allbook: "All book"
+        index: "Index"
+        image: "Image"
+        title: "Title"
+        author: "Author"
+        publisher: "Publisher"
+        category: "Category"
+        price: "Price"
+        quantity: "Quantity"
+        description: "Description"
+        delete: "Delete"
+        update: "Update"
+        search_title: "Search by book's name"
+        search: "Search"

@@ -1,0 +1,57 @@
+<% provide :title, t(".allbook") %>
+<h1><%= t ".allbook" %></h1>
+<%= form_tag admin_books_path, method: :get do %>
+<div class="row">
+  <div class="form-group col-xs-6 col-md-4">
+    <%= text_field_tag :search, params[:search], class: "form-control",
+      placeholder: t(".search_title") %>
+    <%= submit_tag t(".search"), class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>
+<table class="table table-hover bg-table ls-books">
+  <thead class="title_table">
+    <tr>
+      <th class="text-c"><%= t ".index" %></th>
+      <th class="text-c"><%= t ".image" %></th>
+      <th class="text-c"><%= t ".title" %></th>
+      <th class="text-c"><%= t ".author" %></th>
+      <th class="text-c"><%= t ".publisher" %></th>
+      <th class="text-c"><%= t ".category" %></th>
+      <th class="text-c"><%= t ".price" %></th>
+      <th class="text-c"><%= t ".quantity" %></th>
+      <th class="text-c"><%= t ".description" %></th>
+      <th class="text-c"><%= t ".delete" %></th>
+      <th class="text-c"><%= t ".update" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each.with_index do |book, index| %>
+      <tr>
+        <td class="text-c">
+          <% params[:page] ||= "1" %>
+          <%= index_for params[:page], index, Settings.admin.book.per_page %>
+        </td>
+        <td class="text-c"><%= image_tag book.image.url, :size => Settings.admin.book.image_size %> </td>
+        <td class="text-c"><%= book.title %></td>
+        <td class="text-c">
+          <% book.authors.each do|author| %>
+            <%= author.name %>
+          <% end %>
+        </td>
+        <td class="text-c"><%= book.publisher %></td>
+        <td class="text-c"><%= book.category.name %></td>
+        <td class="text-c"><%= book.price %></td>
+        <td class="text-c"><%= book.quantity_in_store %></td>
+        <td class="text-c"><%= book.desciption %></td>
+        <td class="text-c">
+          <%= link_to raw("<span class='glyphicon glyphicon-trash
+                text-danger'></span>"), [:admin, book], method: :delete,
+                data: {confirm: t(".confirm_delete")} %>
+        </td>
+        <td class="text-c"><%= link_to t(".update"), "#" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @books, theme: "twitter-bootstrap-3" %>

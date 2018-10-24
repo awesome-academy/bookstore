@@ -8,8 +8,9 @@
   <%= f.password_field :password, class: "form-control" %>
   <%= f.label :password_confirm %>
   <%= f.password_field :password_confirmation, class: "form-control" %>
-  <%= f.label :birthday %>
-  <%= f.date_select :dob, :order => [:day, :month, :year] %>
+  <%= f.label :Birthday %>
+  <%= f.date_select :dob, :start_year => 1960, :end_year => Date.current.year,
+    :order => [:day, :month, :year] %>
   <%= f.label :phone_number %>
   <%= f.text_field :phone_number, class: "form-control" %>
   <%= f.label :address %>
@@ -20,5 +21,11 @@
       <%= content_tag(:option, p.payment_type, value: p.id) %>
     <% end %>
   <% end %>
+  <div class="field">
+    <%= f.label :avatar do %>
+    <%= f.file_field :avatar %>
+    <%= f.hidden_field :avatar_cache %>
+    <% end %>
+  </div>
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

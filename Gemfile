@@ -13,6 +13,8 @@ gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap-sass", '3.3.7'
 gem "config"
 gem "bcrypt"
+gem "carrierwave"
+gem "mini_magick"
 
 group :development, :test do
   gem "sqlite3", "1.3.13"
@@ -24,6 +26,7 @@ group :development do
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
+  gem "pry"
 end
 
 group :test do

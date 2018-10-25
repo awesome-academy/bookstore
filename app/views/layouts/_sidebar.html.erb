@@ -1,0 +1,26 @@
+<div id="sidebar">
+<ul>
+	<li>
+		<h2><%=t ".search"%></h2>
+		<div id="search" >
+			<form method="get" action="#">
+				<div>
+					<input type="text" name="s" id="search-text" value="" />
+					<input type="submit" id="search-submit" value="" />
+				</div>
+			</form>
+		</div>
+		<div style="clear: both;">&nbsp;</div>
+	</li>
+	<li>
+		<h2><%= t ".category"%></h2>
+		<ul>
+			<li> <%= link_to (t ".sc"), "#" %></li>
+			<li><%= link_to (t ".psychology") , "#" %></li>
+			<li><%= link_to (t ".comics"), "#" %></li>
+			<li><%= link_to ( t ".romance"), "#" %></a></li>
+			<li><%= link_to ( t ".mystery"), "#" %></a></li>
+			<li><%= link_to ( t ".art"), "#" %></a></li>
+		</ul>
+	</li>
+</div>

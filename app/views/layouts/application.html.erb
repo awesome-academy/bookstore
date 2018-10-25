@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookstore</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title><%= (yield(:title)) %></title>
+    <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag Ckeditor.cdn_url %>
   </head>
 
   <body>
+   <%= render "layouts/header" %>
     <div class="container">
       <% flash.each do |message_type, message| %>
         <div class="alert alert-<%= message_type %>"><%= message %></div>
       <% end %>
-      <%= yield %>
     </div>
+    <div id="page">
+      <div id="page-bgtop">
+        <div id="page-bgbtm">
+          <div id="content">
+            <%= yield %>
+              <div style="clear: both;">&nbsp;</div>
+          </div>
+            <%= render "layouts/sidebar" %>
+             <div style="clear: both;">&nbsp;</div>
+         </div>
+      </div>
+    </div>
+    <%= render "layouts/footer" %>
   </body>
 </html>

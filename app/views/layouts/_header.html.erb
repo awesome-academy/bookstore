@@ -1,0 +1,23 @@
+<div id="menu-wrapper">
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><%= link_to (t ".home_button"), root_path%></li>
+			<li><%= link_to (t ".about_button"), about_path %></li>
+			<li><%= link_to (t ".blog_button"), "#" %></li>
+			<li class="right_button"><%= link_to (t ".login_button"), "#"  %></li>
+			<li class="right_button"><%= link_to (t ".signup_button"), "#"  %></li>
+		</ul>
+	</div>
+<!-- end #menu -->
+</div>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1><%= link_to (t ".store_name") , root_path %></h1>
+			<p>Design by <%= link_to (t ".founder"), (t ".link_hieu")%> </p>
+		</div>
+	</div>
+</div>
+<div id="banner"><%= link_to image_tag("book.jpg", size: "1000x400", alt: "Ko hien thi")%></div>
+<div id="wrapper">
+<!-- end #header -->

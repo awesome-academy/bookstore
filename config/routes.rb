@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :authors, only: [:index]
   namespace :admin do
     resources :books
+    resources :authors, only: [:index]
   end
 end

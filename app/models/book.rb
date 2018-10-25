@@ -6,6 +6,12 @@ class Book < ApplicationRecord
   has_many :author_details, dependent: :destroy
   has_many :authors, through: :author_details
   belongs_to :category
-  #mount_uploader :image, PictureUploader
+  accepts_nested_attributes_for :authors,
+    reject_if: proc {|attributes| attributes[:name].blank? ||
+      Author.check_author_name(attributes[:name]).length != 0},
+      allow_destroy:true
+  mount_uploader :image, PictureUploader
+
   scope :search, ->(title) {where("title LIKE ?", "%#{title}%")}
+
 end

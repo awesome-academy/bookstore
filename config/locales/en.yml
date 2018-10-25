@@ -55,18 +55,6 @@ en:
       update_button: "Update profile"
       my_profile: "My profile"
       time_default: "%d/%m/%Y"
-
-  sessions:
-    new:
-      login_title: "Login"
-      login: "Login"
-      log_in_button: "Login"
-      new_user: "New user?"
-      signup_now: "Sign up now!"
-      remember_me: "Remember me on this computer!"
-    create:
-      require_login: "Invalid email/password!"
-
   admin:
     books:
       index:
@@ -84,3 +72,44 @@ en:
         update: "Update"
         search_title: "Search by book's name"
         search: "Search"
+
+  static_pages:
+    blog:
+      blog_title: "Blog"
+      blog_name: "HTBlog"
+    home:
+      home_title: "Home"
+      welcome: "Welcome to HTBookstore"
+      store: "HTBookstore"
+    about:
+      about_title: "About"
+      store_name: "HTBookstore"
+      alt_image: "Ko hien thi"
+      about_content: "is a design-minded, multi-disciplinary brand offering objects, events, and experiences related to books and reading. We are based in the Ha Dong and Bac Giang City."
+
+  layouts:
+    header:
+      link_hieu: "https://www.facebook.com/troublehfrom18"
+      founder: "Trong Hieu"
+      store_name: "HTBookstore"
+      home_button: "HomePage"
+      about_button: "About"
+      blog_button: "Blog"
+      login_button: "Log in"
+      signup_button: "Sign up"
+    footer:
+      content_footer: "2012. Untitled. All rights reserved. Design by"
+      link_hieu: "https://www.facebook.com/troublehfrom18"
+      founder: "Trong Hieu"
+      store_name: "HTBookstore"
+      content_footer: "2012. Untitled. All rights reserved. Design by"
+    sidebar:
+      search: "Search Here:"
+      category: "Categories"
+      sc: "Science fiction"
+      psychology: "Psychology"
+      comics: "Comics"
+      romance: "Romance"
+      mystery: "Mystery"
+      art: "Art"
+

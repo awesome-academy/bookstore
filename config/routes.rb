@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  root "application#hello"
-  get "/signup", to: "users#new"
-  get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
-  resources :users
-  namespace :admin do
-    resources :books
-  end
+  root "static_pages#home"
+  get "/home", to: "static_pages#home"
+  get "/about", to: "static_pages#about"
+  resources :blogs, only: [:index, :show]
+  resources :books, only: [:index, :show]
 end

@@ -17,7 +17,7 @@
   <%= f.text_field :address, class: "form-control" %>
   <%= f.label :payment %>
   <%= f.select(:payment_id) do %>
-    <% @payments.each do |p| -%>
+    <% @payments.each do |p| %>
       <%= content_tag(:option, p.payment_type, value: p.id) %>
     <% end %>
   <% end %>

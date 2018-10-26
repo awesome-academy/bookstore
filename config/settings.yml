@@ -8,3 +8,4 @@ admin:
   book:
     image_size: 50
     per_page: 20
+    page_index: 1

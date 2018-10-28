@@ -124,6 +124,8 @@ en:
       blog_name: "HTBlog"
       read_button: "Read More"
   books:
+    show:
+      dathang: "Đặt hàng"
     index:
      home_title: "Home"
      welcome: "Welcome to HTBookstore"

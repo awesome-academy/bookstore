@@ -579,7 +579,7 @@ body {
   max-width: 8.333333%;
 }
 }
-.col-md-6, .col-lg-4{
+.col-lg-4{
   position: relative;
   width: 25%;
   min-height: 1px;
@@ -644,6 +644,19 @@ button:hover {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+/* Book product */
+
+.book-image{
+  position: static!important;
+  width: 100%;
+  min-width: 391px;
+}
+
+.book-field{
+  width: 711px;
+  padding: 0 24px;
 }
 
 /* universal */

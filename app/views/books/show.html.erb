@@ -1,2 +1,26 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<% provide(:title, @book.title )%>
+<div class="container">
+<div class="row">
+<div class="card-book h-100"><%= link_to image_tag(@book.image, alt: "khong hien thi", size:"250x300") %>
+  <div class="card-footer">
+    <div class="row">
+    <div class="col-lg-5">
+    <button><i class="fa fa-thumbs-up"></i></button>
+    <button><i class="fa fa-thumbs-down"></i></button>
+    </div>
+    <button type="button" class="btn btn-default" >(11 nhan xet)</button>
+    </div>
+  </div>
+</div>
+<div class="col-lg-5" style="border:0px solid gray">
+  <div class="section" style="padding-bottom:20px;">
+    <h1><%= @book.title %></h1>
+     </div>
+      <div class="section" style="padding-bottom:20px;"><h4 style="color:red"><%= @book.price%>đ</h4></div>
+        <div class="section" style="padding-bottom:20px;">
+          <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><%= t ".dathang" %></button>
+        </div>
+        <p style="text-align: justify;"><%= @book.description %></p>
+      </div>
+    </div>
+  </div>

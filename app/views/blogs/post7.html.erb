@@ -1,8 +1,0 @@
-<% provide(:title, @post.title)%>
-<div class="post">
-	<div><h2 class="title"><%= @post.title %></h2></div>
-		<p class="meta"><span class="date"><%= @post.date %></span><span class="posted">Posted by <%= link_to @post.author , @post.auth_link %></span></p>
-			<div style="clear: both;">&nbsp;</div>
-			<%= link_to image_tag("n.jpg", size: "660x400", alt: "Ko hien thi")%>
-		<p align="justify"> <%= @post.description %></p>
- </div>

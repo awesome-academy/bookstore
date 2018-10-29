@@ -74,9 +74,6 @@ en:
         search: "Search"
 
   static_pages:
-    blog:
-      blog_title: "Blog"
-      blog_name: "HTBlog"
     home:
       home_title: "Home"
       welcome: "Welcome to HTBookstore"
@@ -97,12 +94,15 @@ en:
       blog_button: "Blog"
       login_button: "Log in"
       signup_button: "Sign up"
+      new_blog: "New blog"
+      profile_button: "Profile"
+      logout_button: "Log out"
     footer:
       content_footer: "2012. Untitled. All rights reserved. Design by"
       link_hieu: "https://www.facebook.com/troublehfrom18"
       founder: "Trong Hieu"
       store_name: "HTBookstore"
-      content_footer: "2012. Untitled. All rights reserved. Design by"
+      content_footer: "2018. Untitled. All rights reserved. Design by"
     sidebar:
       search: "Search Here:"
       category: "Categories"
@@ -112,4 +112,17 @@ en:
       romance: "Romance"
       mystery: "Mystery"
       art: "Art"
-
+  blogs:
+    create:
+      created_sucess: "Blog created sucess!"
+      create_failed: "Blog created fail, try again!"
+    new:
+      newblog: "New blog: "
+      back: "Back"
+    index:
+      blog_title: "Blog"
+      blog_name: "HTBlog"
+      read_button: "Read More"
+      posted_by: "Posted by"
+    form:
+      hi: "prohibited this blog from being saved: "

@@ -1,13 +1,21 @@
 <div id="menu-wrapper">
 	<div id="menu">
-		<ul>
-			<li class="current_page_item"><%= link_to (t ".home_button"), root_path%></li>
+      <ul>
+			<li class="current_page_item" ><%= link_to (t ".home_button"), root_path%></li>
 			<li><%= link_to (t ".about_button"), about_path %></li>
-			<li><%= link_to (t ".blog_button"), "#" %></li>
-			<li class="right_button"><%= link_to (t ".login_button"), "#"  %></li>
-			<li class="right_button"><%= link_to (t ".signup_button"), "#"  %></li>
+			<li><%= link_to (t ".blog_button"), blogs_path %></li>
+			<% if logged_in? %>
+          <li><%= link_to (t ".new_blog"), new_blog_path %></li>
+          <li class="right_button"><%= link_to (t ".profile_button"), current_user %></li>
+          <li class="right_button"><%= link_to (t ".logout_button"), logout_path, method: :delete %></li>
+      </ul>
+        <% else %>
+			<li class="right_button"><%= link_to (t ".login_button"), login_path  %></li>
+			<li class="right_button"><%= link_to (t ".signup_button"), signup_path  %></li>
+			<% end %>
 		</ul>
 	</div>
+</header>
 <!-- end #menu -->
 </div>
 <div id="header-wrapper">

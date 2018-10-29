@@ -72,6 +72,11 @@ en:
         update: "Update"
         search_title: "Search by book's name"
         search: "Search"
+        confirm_delete: You sure?
+
+      destroy:
+        delete_success: Deleted book success!
+        deleted_fail: Deleted book fail!
 
   static_pages:
     home:

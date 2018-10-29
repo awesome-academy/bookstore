@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  resources :blogs
   resources :books, only: [:index, :show]
   resources :users
-  resources :blogs
+  resources :authors, only: [:index]
 
   namespace :admin do
     resources :books

@@ -1,0 +1,2 @@
+module FavoriteBooksHelper
+end

@@ -20,11 +20,24 @@
 </div>
 <div id="header-wrapper">
 	<div id="header">
-		<div id="logo">
+    <div class="row">
+		<div id="logo" class="col-lg-6" >
 			<h1><%= link_to (t ".store_name") , root_path %></h1>
-			<p>Design by <%= link_to (t ".founder"), (t ".link_hieu")%> </p>
+			<p><%= t ".design" %> <%= link_to (t ".founder"), (t ".link_hieu")%> </p>
 		</div>
-	</div>
+    <div class="col-lg-4"></div>
+    <div id="dropdown-button" class="col-lg-2">
+    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li class="dropdown-item" ></li>
+    <li class="dropdown-item" ></li>
+    <li class="dropdown-item" ></li>
+  </div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="banner"><%= link_to image_tag("book.jpg", size: "1000x400", alt: "Ko hien thi")%></div>
 <div id="wrapper">

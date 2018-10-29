@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'favorite_books/index'
   root "books#index"
   mount Ckeditor::Engine => "/ckeditor"
   get "/home", to: "static_pages#home"
@@ -7,11 +8,14 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  resources :users do
+    resources :favorite_books, only: [:index]
+  end
+  resources :emotions, only: [:destroy, :create]
   resources :blogs
   resources :books, only: [:index, :show]
-  resources :users
+  resources :emotions, only: [:destroy, :create]
   resources :authors, only: [:index]
-
   namespace :admin do
     resources :books
   end

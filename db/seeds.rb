@@ -105,10 +105,24 @@ end
   Payment.create! payment_type: type, description: des
 end
 
-User.create! name: "Admin",
-             email: "admin@example.com",
+5.times do |n|
+name  = Faker::Name.name
+User.create! name: name,
+             email: "admin#{n+1}@example.com",
              password: "111111",
              password_confirmation: "111111",
              dob: "1/1/1991",
              is_admin: true,
              payment_id: 1
+end
+
+6.upto(40) do |n|
+name  = Faker::Name.name
+User.create! name: name,
+             email: "admin#{n+1}@example.com",
+             password: "111111",
+             password_confirmation: "111111",
+             dob: "1/1/1991",
+             is_admin: false,
+             payment_id: 1
+end

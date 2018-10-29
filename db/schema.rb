@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2018_10_26_133903) do
     t.string "date"
     t.string "description"
     t.string "auth_link"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "body"
@@ -102,6 +103,9 @@ ActiveRecord::Schema.define(version: 2018_10_26_133903) do
     t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_emotions_on_book_id"
+    t.index ["user_id", "book_id"], name: "index_emotions_on_user_id_and_book_id", unique: true
+    t.index ["user_id"], name: "index_emotions_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|

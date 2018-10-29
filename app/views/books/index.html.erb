@@ -17,18 +17,9 @@
           <h5><%=book.price.to_s%>đ</h5>
           </div>
           <div class="card-footer">
-          <button><i class="fa fa-thumbs-up"></i></button>
-          <button><i class="fa fa-thumbs-down"></i></button>
-          </div>
+        </div>
       </div>
     </div>
 <% end %>
 </div>
 <%= will_paginate %>
-<script>
-  $("button").clickToggle(function(){
-
-    $(this).css('background-color', "red");
-
-});
-</script>

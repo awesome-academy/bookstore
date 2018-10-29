@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   resources :blogs
   resources :books, only: [:index, :show]
   resources :users
+  resources :emotions, only: [:destroy, :create]
   resources :authors, only: [:index]
-
   namespace :admin do
     resources :books
   end

@@ -5,8 +5,7 @@
   <div class="card-footer">
     <div class="row">
     <div class="col-lg-5">
-    <button><i class="fa fa-thumbs-up"></i></button>
-    <button><i class="fa fa-thumbs-down"></i></button>
+    <%= render "like_form" if logged_in? %>
     </div>
     <button type="button" class="btn btn-default" >(11 nhan xet)</button>
     </div>

@@ -1,4 +1,7 @@
+*{};
 @import "color";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 body {
   margin: 0;
   padding: 0;
@@ -257,6 +260,7 @@ a {
 .post {
   margin-bottom: 15px;
   border-bottom: 1px dashed $gains-boro;
+  padding: 10px;
 
   .title {
   height: 25px;
@@ -275,18 +279,23 @@ a {
   text-align: left;
   font-weight: normal;
   .date {
+  padding: 15px 0px;
   float: left;
   }
   .posted {
+  padding: 15px 0px;
   float: right;
   }
   a{}
   }
 
   .entry {
-  padding: 0px 0px 20px 0px;
+  padding: 10px 0px 20px 0px;
   padding-bottom: 20px;
   text-align: justify;
+  }
+  .h-25 {
+  height: 25% !important;
   }
 }
 
@@ -311,7 +320,7 @@ a {
   float: right;
   width: 310px;
   margin: 0px;
-  padding: 30px 0px 0px 0px;
+  padding: 30px 0px 0px 60px;
   color: $black;
 
   ul {
@@ -389,7 +398,7 @@ a {
 
 #footer {
   overflow: hidden;
-  height: 50px;
+  height: 76px;
   margin: 0 auto;
   padding: 0px 0 15px 0;
   background: #E9E9E9;
@@ -398,13 +407,13 @@ a {
 
   p {
   margin: 0;
-  padding-top: 20px;
+  padding-top: 30px;
   line-height: normal;
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 2px;
   text-transform: uppercase;
   text-align: center;
-  color: $nobel;
+  color: #A0A0A0;
   }
 
   a {
@@ -481,4 +490,275 @@ body {
   font-family: Arial, Sans-Serif;
   font-size: 15px;
   margin: 0;
+}
+
+/* Paginate */
+.pagination {
+    font-size: 18px;
+    float: right;
+}
+
+.pagination > * {
+    margin-right: 0.1em;
+    padding: 0.3em 0.4em;
+}
+
+.pagination a:hover {
+    background: $cam14 none repeat scroll 0 0;
+}
+
+.pagination a:active {
+    text-shadow: none;
+}
+
+.pagination .current {
+    background: $cam14 none repeat scroll 0 0;
+    color: white;
+}
+
+.pagination .disabled {
+    color: #C0C0C0;
+}
+
+/* Blog post's */
+element.style {
+  text-align: justify;
+}
+.content .nd-ct p {
+  margin-top: 20px;
+}
+body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol, li, dl, dt, dd, form, a, th {
+  border: 0 none;
+  margin: 0;
+  outline: medium none;
+  padding: 0;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.content .nd-ct {
+  border-top: 1px solid $gray-80;
+  clear: both;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 100%;
+  color: $gray-20;
+  font-size: 13px;
+  line-height: 20px;
+}
+body {
+  background: $white;
+  min-width: 1168px;
+  font-family: Arial, Sans-Serif;
+  font-size: 15px;
+  margin: 0;
+}
+
+/*Books*/
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+@media (min-width: 992px) {
+.col-lg-4 {
+  -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  .col-1 {
+  -ms-flex: 0 0 8.333333%;
+  flex: 0 0 8.333333%;
+  max-width: 8.333333%;
+}
+}
+.col-lg-4{
+  position: relative;
+  width: 25%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important;
+}
+.card-book {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+.h-100 {
+  height: 100% !important;
+}
+.card-body {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  h5 {
+  font-size: 12px
+  }
+}
+.card-title {
+  margin-bottom: 0.75rem;
+  a {
+  font-size: 13px;
+  }
+}
+.card-text:last-child {
+  margin-bottom: 0;
+}
+.card-footer {
+  padding: 0.75rem 1.25rem;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+  button{
+
+  }
+}
+.text-muted {
+  color: #6c757d !important;
+}
+button:hover {
+    background-color: $paci ;
+}
+
+/* mixins, variables, etc. */
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Book product */
+
+.book-image{
+  position: static!important;
+  width: 100%;
+  min-width: 391px;
+}
+
+.book-field{
+  width: 711px;
+  padding: 0 24px;
+}
+
+/* universal */
+
+body {
+  padding-top: 0px;
+}
+
+.ls-books {
+  border: 1px solid #e7e7e7;
+  .title_table {
+    background-color: #B8E6FF;
+  }
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+  ul {
+    list-style: none;
+  }
+  table {
+    align: center;
+    tr {
+      th, td {
+        padding: 10px;
+      }
+    }
+  }
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+.logsign{
+  text-align: center;
+  padding: 10px;
+  font-size: 36px;
+}
+
+
+/* profile */
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+  a {
+    padding: 0 10px;
+    color: white;
+    font-size: 18px;
+  }
+}
+
+button {
+}
+
+.button-update{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: #f5f0f0;
+    background-color: #171616;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 19px;
+    font-style: italic;
 }

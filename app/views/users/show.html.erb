@@ -1,5 +1,5 @@
 <% provide :title, @user.name %>
-<h2><%= t ".my_profile" %></h2>
+<h2 class="logsign" class="myprofile"><%= t ".my_profile" %></h2>
 
 <div class="card">
   <%= image_tag @user.avatar.url, :size => Settings.user.avatar_profile %>
@@ -20,5 +20,5 @@
     <%= t ".address" %>
     <%= @user.address %>
   </p>
-  <p><button><%= link_to t(".update_button"),  edit_user_path %></button></p>
+  <p><button class="button-update"><%= link_to t(".update_button"),  edit_user_path %></button></p>
 </div>

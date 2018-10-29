@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
-  root "static_pages#home"
+  root "books#index"
+  mount Ckeditor::Engine => "/ckeditor"
   get "/home", to: "static_pages#home"
   get "/about", to: "static_pages#about"
-  resources :blogs, only: [:index, :show]
+  resources :blogs
   resources :books, only: [:index, :show]
+  get "/signup", to: "users#new"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+  resources :users
+  resources :emotions, only: [:destroy, :create]
+  namespace :admin do
+    resources :books
+  end
 end

@@ -7,7 +7,6 @@ class CreateBlogs < ActiveRecord::Migration[5.1]
       t.string :date
       t.string :description
       t.string :auth_link
-      t.timestamps
       t.text   :body
       t.timestamps
     end

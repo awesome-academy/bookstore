@@ -123,6 +123,13 @@ en:
       blog_title: "Blog"
       blog_name: "HTBlog"
       read_button: "Read More"
-      posted_by: "Posted by"
+  books:
+    show:
+      dathang: "Đặt hàng"
+    index:
+     home_title: "Home"
+     welcome: "Welcome to HTBookstore"
+     store: "HTBookstore"
+     posted_by: "Posted by"
     form:
       hi: "prohibited this blog from being saved: "

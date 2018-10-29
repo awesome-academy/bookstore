@@ -5,7 +5,6 @@ class Book < ApplicationRecord
   has_many :author_details, dependent: :destroy
   has_many :authors, through: :author_details
   belongs_to :category
-  mount_uploader :image, PictureUploader
-
+  #mount_uploader :image, PictureUploader
   scope :search, ->(title) {where("title LIKE ?", "%#{title}%")}
 end

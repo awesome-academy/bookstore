@@ -6,9 +6,8 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.float :price
       t.integer :quantity_in_store
       t.string :image
-      t.text :desciption
+      t.text :description
       t.integer :category_id
-
       t.timestamps
     end
   end

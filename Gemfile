@@ -12,6 +12,8 @@ gem "jbuilder", "~> 2.5"
 gem "will_paginate"
 gem "will_paginate-bootstrap"
 gem "bootsnap", ">= 1.1.0", require: false
+gem "config"
+gem "faker"
 gem "bootstrap-sass", '3.3.7'
 gem "jquery-rails"
 gem "config"

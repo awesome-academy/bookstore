@@ -1,0 +1,26 @@
+<% @books.each.with_index do |book, index| %>
+  <tr>
+    <td class="text-c">
+      <% params[:page] ||= Settings.admin.book.page_index %>
+      <%= index_for params[:page], index, Settings.admin.book.per_page %>
+    </td>
+    <td class="text-c"><%= image_tag book.image.url, :size => Settings.admin.book.image_size %> </td>
+    <td class="text-c"><%= book.title %></td>
+    <td class="text-c">
+      <% book.authors.each do|author| %>
+        <%= author.name %>
+      <% end %>
+    </td>
+    <td class="text-c"><%= book.publisher %></td>
+    <td class="text-c"><%= book.category.name %></td>
+    <td class="text-c"><%= book.price %></td>
+    <td class="text-c"><%= book.quantity_in_store %></td>
+    <td class="text-c"><%= book.desciption %></td>
+    <td class="text-c">
+      <%= link_to raw("<span class='glyphicon glyphicon-trash
+            text-danger'></span>"), [:admin, book], method: :delete,
+            data: {confirm: t(".confirm_delete")} %>
+    </td>
+    <td class="text-c"><%= link_to t(".update"), "#" %></td>
+  </tr>
+<% end %>

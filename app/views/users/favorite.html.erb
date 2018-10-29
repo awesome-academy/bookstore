@@ -1,13 +1,6 @@
-<% provide(:title, (t ".home_title"))%>
-<div class="post" >
-  <h2 class="title"><%=(t ".welcome")%></h2>
-   <div class="entry">
-    <p><%= (t ".this") %><strong> <%=(t ".store")%> </strong></p>
-    </div>
-    <% if logged_in? %>
-    <button id="delete-button" style="text-decoration-color: white;" type="button" class="btn btn-danger"><i class="fa fa-heart"></i><%= link_to (t ".favorite"), favorite_books_user_path(current_user.id) %></button>
-    <% end %>
-  </div>
+<div class="kenh14-border" id="blog-title" >
+<h1><%=(t ".favorite_books")%></h1>
+</div>
 <div class="row">
 <% @books.each do |book| %>
   <div class="col-lg-4 col-md-4 mb-4">
@@ -25,4 +18,4 @@
     </div>
 <% end %>
 </div>
-<%= will_paginate %>
+<%= will_paginate @books %>

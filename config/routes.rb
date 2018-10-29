@@ -7,10 +7,16 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  resources :books, only: [:index, :show]
-  resources :users
+  resources :users do
+    member do
+      get "/favorite_books", to:"users#favorite"
+    end
+  end
+  resources :emotions, only: [:destroy, :create]
   resources :blogs
-
+  resources :books, only: [:index, :show]
+  resources :emotions, only: [:destroy, :create]
+  resources :authors, only: [:index]
   namespace :admin do
     resources :books
   end

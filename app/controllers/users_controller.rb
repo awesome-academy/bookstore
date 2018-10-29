@@ -22,6 +22,10 @@ class UsersController < ApplicationController
 
   def show; end
 
+  def favorite
+    @books = @user.favorite_books.paginate page: params[:page] , per_page: 15
+  end
+
   def edit
   end
 

@@ -22,6 +22,9 @@ en:
     update:
       updated_success: "User updated success!"
 
+    favorite:
+      favorite_books: "Your favorite books"
+
     show:
       name: "Name: "
       email: "Email: "
@@ -72,6 +75,11 @@ en:
         update: "Update"
         search_title: "Search by book's name"
         search: "Search"
+        confirm_delete: You sure?
+
+      destroy:
+        delete_success: Deleted book success!
+        deleted_fail: Deleted book fail!
 
   static_pages:
     home:
@@ -97,6 +105,7 @@ en:
       new_blog: "New blog"
       profile_button: "Profile"
       logout_button: "Log out"
+      design: "Design by"
     footer:
       content_footer: "2012. Untitled. All rights reserved. Design by"
       link_hieu: "https://www.facebook.com/troublehfrom18"
@@ -131,5 +140,7 @@ en:
      welcome: "Welcome to HTBookstore"
      store: "HTBookstore"
      posted_by: "Posted by"
+     this: "This is"
+     favorite: "   YOUR FAVORITE BOOK"
     form:
       hi: "prohibited this blog from being saved: "

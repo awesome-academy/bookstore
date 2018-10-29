@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 2018_10_26_133903) do
     t.string "date"
     t.string "description"
     t.string "auth_link"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "body"
     t.index ["user_id", "created_at"], name: "index_blogs_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_blogs_on_user_id"
   end
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2018_10_26_133903) do
     t.float "price"
     t.integer "quantity_in_store"
     t.string "image"
-    t.text "desciption"
+    t.text "description"
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -102,6 +102,9 @@ ActiveRecord::Schema.define(version: 2018_10_26_133903) do
     t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_emotions_on_book_id"
+    t.index ["user_id", "book_id"], name: "index_emotions_on_user_id_and_book_id", unique: true
+    t.index ["user_id"], name: "index_emotions_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|

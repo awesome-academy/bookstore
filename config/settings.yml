@@ -4,6 +4,8 @@ user:
   max_email_size: 255
   min_password_size: 6
   avatar_profile: 200
+book:
+  book_size: 250x300
 admin:
   book:
     image_size: 50

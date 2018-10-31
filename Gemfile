@@ -24,7 +24,9 @@ gem "ckeditor"
 gem "ffaker"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
-gem "jquery-rails"
+gem "jquery-ui-rails"
+gem 'jquery-rails'
+gem 'rails-ujs'
 
 group :development, :test do
   gem "sqlite3", "1.3.13"

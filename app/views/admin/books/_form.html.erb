@@ -1,0 +1,4 @@
+<%= f.fields_for :authors do |builder| %>
+  <%= render "author_fields", f: builder %>
+<% end %>
+<%= link_to_add_fields t(".add_author"), f, :authors %>

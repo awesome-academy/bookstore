@@ -77,6 +77,14 @@ en:
       destroy:
         delete_success: Deleted book success!
         deleted_fail: Deleted book fail!
+      new:
+        save: "Save"
+        addbook: Add book
+      create:
+        created_success: "Created book success"
+        created_fail: "Created book fail, try again!"
+      form:
+        add_author: "Add Author"
 
   static_pages:
     home:

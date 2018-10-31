@@ -53,6 +53,7 @@ node_modules/
 .idea/
 /test/*
 .rake_tasks~
+/public/*
 
 config/settings.local.yml
 config/settings/*.local.yml

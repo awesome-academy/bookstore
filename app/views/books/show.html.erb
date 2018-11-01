@@ -1,25 +1,24 @@
 <% provide(:title, @book.title )%>
 <div class="container">
 <div class="row">
-<div class="card-book h-100"><%= link_to image_tag(@book.image, alt: "khong hien thi", size:"250x300") %>
+<div class="card-book h-100"><%= link_to image_tag(@book.image, alt: t(".alt") , size: t(".size") ) %>
   <div class="card-footer">
     <div class="row">
     <div class="col-lg-5">
     <%= render "like_form" if logged_in? %>
     </div>
-    <button type="button" class="btn btn-default" >(11 nhan xet)</button>
     </div>
   </div>
 </div>
-<div class="col-lg-5" style="border:0px solid gray">
-  <div class="section" style="padding-bottom:20px;">
+<div class="col-lg-5" id="book-card-wrap" >
+  <div class="section" >
     <h1><%= @book.title %></h1>
      </div>
-      <div class="section" style="padding-bottom:20px;"><h4 style="color:red"><%= @book.price%>đ</h4></div>
-        <div class="section" style="padding-bottom:20px;">
-          <button class="btn btn-success"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><%= t ".dathang" %></button>
+      <div class="section" ><h4><%= @book.price%>đ</h4></div>
+        <div class="section" >
+          <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><%= t ".dathang" %></button>
         </div>
-        <p style="text-align: justify;"><%= @book.description %></p>
+        <p><%= @book.description %></p>
       </div>
     </div>
   </div>

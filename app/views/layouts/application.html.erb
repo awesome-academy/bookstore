@@ -9,6 +9,7 @@
     <link href="http://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet" type="text/css" />
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/popper.min.js">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
     </script>
     <%= csrf_meta_tags %>
@@ -29,10 +30,10 @@
         <div id="page-bgbtm">
           <div id="content">
             <%= yield %>
-              <div style="clear: both;">&nbsp;</div>
+              <div id="inside-post">&nbsp;</div>
           </div>
             <%= render "layouts/sidebar" %>
-             <div style="clear: both;">&nbsp;</div>
+             <div id="inside-post">&nbsp;</div>
          </div>
       </div>
     </div>

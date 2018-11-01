@@ -6,7 +6,7 @@
   <div class="post">
     <div><h2 class="title"><%= blog.title %></h2></div>
     <p class="meta"><span class="date"><%= blog.date %></span><span class="posted"><%= t".posted_by" %> <%= link_to blog.author , blog.auth_link %></span></p>
-      <div style="clear: both;">&nbsp;</div>
+      <div id ="inside-post">&nbsp;</div>
     <p align="justify"> <%= blog.description %></p>
     <p class="links"><%= link_to (t ".read_button"), blog_path(blog) %></p>
   </div>

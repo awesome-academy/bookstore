@@ -4,8 +4,14 @@ en:
       the_form: "The form contains: "
       error: "error"
 
+  favorite_books:
+    index:
+      user_not_found: "User not found!"
+      favorite_books: "Your favorite books"
+      size: "120x140"
+      alt: "khong hien thi"
+
   users:
-    user_not_found: "User not found!"
     please_login: "Please login!"
     create:
       created_sucess: "Account created sucess!"
@@ -13,15 +19,12 @@ en:
     new:
       create_button: "Create"
       signup_title: "Signup"
-
     edit:
       update_title: "Update profile"
       update_button: "Update"
       update_profile: "Update profile"
-
     update:
       updated_success: "User updated success!"
-
     show:
       name: "Name: "
       email: "Email: "
@@ -110,6 +113,7 @@ en:
       new_blog: "New blog"
       profile_button: "Profile"
       logout_button: "Log out"
+      design: "Design by"
     footer:
       content_footer: "2012. Untitled. All rights reserved. Design by"
       link_hieu: "https://www.facebook.com/troublehfrom18"
@@ -137,12 +141,21 @@ en:
       blog_name: "HTBlog"
       read_button: "Read More"
   books:
+    like:
+      liked: " người đã thích"
+    unlike:
+      liked: " người đã thích"
     show:
       dathang: "Đặt hàng"
+      alt: "Khong hien thi"
+      size: "200x250"
     index:
      home_title: "Home"
      welcome: "Welcome to HTBookstore"
      store: "HTBookstore"
      posted_by: "Posted by"
+     this: "This is"
+     favorite: "   YOUR FAVORITE BOOK"
+     liked: " người đã thích"
     form:
       hi: "prohibited this blog from being saved: "

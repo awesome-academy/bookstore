@@ -61,7 +61,7 @@ a {
 
 #logo {
   margin: 0px;
-  padding: 30px 0px;
+  padding: 28px 12px;
   color: $black;
   h1,p {
   margin: 0;
@@ -761,4 +761,40 @@ button {
     width: 100%;
     font-size: 19px;
     font-style: italic;
+}
+
+#delete-button{
+  a {
+  color: white;
+  }
+}
+
+#book-card-wrap{
+  border:0px solid gray;
+  .section{
+  padding-bottom:20px;
+  }
+  h4 {
+  color:red;
+  }
+  span{
+  margin-right:20px;
+  }
+  p {
+  text-align: justify;
+  width: 477px;
+  }
+}
+
+#inside-post{
+  div{
+  clear: both;
+  }
+}
+
+#dropdown-button{
+  padding: 15px 131px;
+  li {
+  text-align: center;
+  }
 }

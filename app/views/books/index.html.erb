@@ -1,10 +1,13 @@
 <% provide(:title, (t ".home_title"))%>
-<div class="post">
+<div class="post" >
   <h2 class="title"><%=(t ".welcome")%></h2>
    <div class="entry">
-    <p>This is <strong> <%=(t ".store")%> </strong></p>
+    <p><%= (t ".this") %><strong> <%=(t ".store")%> </strong></p>
     </div>
-</div>
+    <% if logged_in? %>
+    <button id="delete-button" type="button" class="btn btn-danger"><i class="fa fa-heart"></i><%= link_to (t ".favorite"), user_favorite_books_path(current_user.id) %></button>
+    <% end %>
+  </div>
 <div class="row">
 <% @books.each do |book| %>
   <div class="col-lg-4 col-md-4 mb-4">
@@ -17,6 +20,7 @@
           <h5><%=book.price.to_s%>đ</h5>
           </div>
           <div class="card-footer">
+            <button type="button" class="btn-btn-primary" ><%= link_to book.users_liked.count.to_s << (t ".liked") , book_path(book) %> </button>
         </div>
       </div>
     </div>

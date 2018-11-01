@@ -2,7 +2,7 @@ class FavoriteBooksController < ApplicationController
   before_action :load_user
 
   def index
-    @books = @user.favorite_books.paginate page: params[:page] , per_page: 15
+    @books = @user.favorite_books.page(params[:page]).per(Settings.admin.book.per_page)
   end
 
   private

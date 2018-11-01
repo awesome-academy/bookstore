@@ -7,14 +7,8 @@ en:
       the_form: "The form contains: "
       error: "error"
 
-  favorite_books:
-    index:
-      user_not_found: "User not found!"
-      favorite_books: "Your favorite books"
-      size: "120x140"
-      alt: "khong hien thi"
-
   users:
+    user_not_found: "User not found!"
     please_login: "Please login!"
     create:
       created_sucess: "Account created sucess!"
@@ -22,12 +16,20 @@ en:
     new:
       create_button: "Create"
       signup_title: "Signup"
+
     edit:
       update_title: "Update profile"
       update_button: "Update"
       update_profile: "Update profile"
+
     update:
       updated_success: "User updated success!"
+
+    index:
+      favorite_books: "Your favorite books"
+      size: "120x140"
+      alt: "khong hien thi"
+
     show:
       name: "Name: "
       email: "Email: "
@@ -83,14 +85,18 @@ en:
       destroy:
         delete_success: Deleted book success!
         deleted_fail: Deleted book fail!
-      new:
-        save: "Save"
-        addbook: Add book
-      create:
-        created_success: "Created book success"
-        created_fail: "Created book fail, try again!"
-      form:
-        add_author: "Add Author"
+    users:
+      destroy:
+        cant: "Can't delete admin"
+        success: "Deleted user successful"
+        fail: "Can't delete user"
+      users_table:
+        you_want: "You want to delete user: "
+        are_you: ". Are you sure?"
+
+      index:
+        delete: "Delete"
+        users_title: "All users"
 
   static_pages:
     home:
@@ -117,12 +123,16 @@ en:
       profile_button: "Profile"
       logout_button: "Log out"
       design: "Design by"
+      size: "1000x400"
+      alt: "Khong hien thi"
+      book: "book.jpg"
     footer:
       content_footer: "2012. Untitled. All rights reserved. Design by"
       link_hieu: "https://www.facebook.com/troublehfrom18"
       founder: "Trong Hieu"
       store_name: "HTBookstore"
       content_footer: "2018. Untitled. All rights reserved. Design by"
+      photo: ". Photo by "
     sidebar:
       search: "Search Here:"
       category: "Categories"
@@ -132,6 +142,10 @@ en:
       romance: "Romance"
       mystery: "Mystery"
       art: "Art"
+    admin_button:
+      manage_users: "Manage users"
+      manage_books: "Manage books"
+      admin: "Admin"
 
   blogs:
     create:
@@ -153,6 +167,7 @@ en:
     show:
       dathang: "Add to cart"
       alt: "Not display"
+      size: "200x250"
     index:
      home_title: "Home"
      welcome: "Welcome to HTBookstore"

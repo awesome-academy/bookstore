@@ -1,0 +1,21 @@
+<div class="row">
+<% @users.each do |user| %>
+  <div class="col-lg-4 col-md-4 mb-4">
+    <div class="card-book h-100">
+      <%= link_to image_tag( user.avatar.url , size: Settings.admin.user_table.size ), user_path(user)%>
+        <div class="card-body">
+          <h4 class="card-title">
+            <%= link_to user.name, user_path(user) %>
+          </h4>
+          <h5><%= user.dob %></h5>
+          <h5><%= user.email %></h5>
+          <h5><%= user.address %></h5>
+          </div>
+          <div class="card-footer">
+            <%= link_to (t ".delete"), admin_user_path(user), :action => "destroy", method: :delete,  data: { confirm: t(".you_want") << user.name << t(".are_you") }, class: "btn btn-danger", id: "delete-button", remote: true %>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>
+<%= paginate @users, theme: "twitter-bootstrap-3" %>

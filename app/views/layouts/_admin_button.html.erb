@@ -1,0 +1,10 @@
+<div id="dropdown-button" class="col-lg-2">
+    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><%= t ".admin" %></button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li class="dropdown-item" ><%= link_to t(".manage_users"), admin_users_path, method: :get, action: :index %><%= link_to t(".manage_books"), admin_books_path, method: :get, action: :index %></li>
+    <li class="dropdown-item" ></li>
+    <li class="dropdown-item" ></li>
+  </div>
+</div>
+</div>

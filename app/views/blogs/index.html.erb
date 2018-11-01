@@ -11,4 +11,4 @@
     <p class="links"><%= link_to (t ".read_button"), blog_path(blog) %></p>
   </div>
 <% end %>
-<%= will_paginate %>
+<%= paginate @blogs, theme: "twitter-bootstrap-3" %>

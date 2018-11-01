@@ -1,7 +1,7 @@
-*{};
-@import "color";
+@import 'color';
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'font-awesome';
 body {
   margin: 0;
   padding: 0;
@@ -763,10 +763,17 @@ button {
     font-style: italic;
 }
 
+/* Delete button */
+
 #delete-button{
   a {
   color: white;
   }
+}
+
+/* List users */
+.none-bullet {
+  list-style-type: none;
 }
 
 #book-card-wrap{
@@ -793,7 +800,7 @@ button {
 }
 
 #dropdown-button{
-  padding: 15px 131px;
+  padding: 15px 257px;
   li {
   text-align: center;
   }

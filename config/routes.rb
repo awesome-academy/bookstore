@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :authors, only: [:index]
   namespace :admin do
     resources :books
+    resources :users, except: [:edit]
     resources :authors, only: [:index]
   end
 end

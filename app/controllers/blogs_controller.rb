@@ -9,7 +9,7 @@ class BlogsController < ApplicationController
   end
 
   def index
-    @blogs = Blog.paginate page: params[:page] ,:per_page => 5
+    @blogs = Blog.page(params[:page]).per(Settings.admin.book.per_page)
   end
 
   def create

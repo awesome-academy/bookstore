@@ -1,7 +1,7 @@
 class CartItemsController < ApplicationController
   before_action {flash.clear}
   def index
-    @items = CartItem.page(params[:page]).per Settings.admin.book.per_page
+    @items = current_user.cart_items.page(params[:page]).per Settings.admin.book.per_page
   end
 
   def destroy
@@ -35,6 +35,6 @@ class CartItemsController < ApplicationController
   private
 
   def cart_item_params
-    params.require(:cart_item).permit :book_id, :user_id, :quantity
+    params.require(:cart_item).permit :book_id, :user_id, :quantity, :paideach
   end
 end

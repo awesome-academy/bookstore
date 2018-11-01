@@ -10,12 +10,42 @@ en:
   cart_items:
     index:
       title: "Your cart"
+      checkout: "Checkout"
+      add: "Add more books"
+      delete_all: "Delete all items"
+      delete_item: "Delete items"
+    cart:
+      total: "Total : "
     create:
       add: "Book was added to cart"
       update: "Cart item's quantity was updated"
     destroy:
       sucess: "Deleted cart item successful!"
-
+  orders:
+    show:
+      title: "Order #"
+      customer: "Customer infomations: "
+      order_items: "Order items details: "
+      name: "Name: "
+      dob: "Date of birth: "
+      phone_number: "Phone number: "
+      date: "Created at: "
+      address: "Order address: "
+      payment: "Payment type: payment type "
+      total: "Total pay: "
+    new:
+      none_item: "Your cart is empty! Leave to homepage to add some cart items"
+      order_title: "Your order"
+      order_button: "Create order"
+      user_button: "Update your profile"
+      order_detail: "Please update your details for this order(your profile) : "
+      step_1: "Step 1: We 'll use your profile's name, date of birth, phone number and address for this order's details. Make sure that was fully updated! "
+      required: "If required infomations were updated, you can switch to step 2."
+      step_2: "Step 2: Create this order!"
+    create:
+      updated_success: "Updated profile successful!"
+      order_success: "Created order successful! "
+      pls_update: "Your required infomations is not updated fully!"
   users:
     user_not_found: "User not found!"
     please_login: "Please login!"
@@ -135,6 +165,7 @@ en:
       new_blog: "New blog"
       profile_button: "Profile"
       logout_button: "Log out"
+      cart_button: "Cart"
       design: "Design by"
       size: "1000x400"
       alt: "Khong hien thi"

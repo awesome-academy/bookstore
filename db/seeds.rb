@@ -24,7 +24,7 @@ Author.create!( name: "Hoàng Trọng Hiếu",
       birthday: "18/12/1996",
       id: "2")
 
-Category.create!(id: "3", name: "Science fiction", description: "Science fiction book")
+Category.create!(id: "3", name: "Science fiction", description: "Science fiction book")r
 Book.create!(title:  "Bạch Dạ Hành",
              id: "3",
              publisher: "Nhã Nam",

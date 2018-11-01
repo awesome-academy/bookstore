@@ -3,35 +3,16 @@
 <h1><%=(t ".title")%></h1>
 </div>
 <div id="books-table">
+<%= render "cart" %>
 <table class="table table-hover bg-table ls-books">
-  <thead class="title_table">
-    <tr>
-      <th class="text-c"><%= t ".index" %></th>
-      <th class="text-c"><%= t ".image" %></th>
-      <th class="text-c"><%= t ".title" %></th>
-      <th class="text-c"><%= t ".price" %></th>
-      <th class="text-c"><%= t ".quantity" %></th>
-      <th class="text-c"><%= t ".delete" %></th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @items.each_with_index do |item, index| %>
-    <tr>
-      <td class="text-c">
-        <%= index_for params[:page], index, Settings.admin.book.per_page %>
-      </td>
-      <td class="text-c"><%= image_tag item.book.image.url, :size => Settings.admin.book.image_size %> </td>
-      <td class="text-c"><%= item.book.title %></td>
-      <td class="text-c"><%= item.book.price %></td>
-      <td class="text-c"><%= item.quantity %></td>
-      <td class="text-c">
-        <%= link_to raw("<span class='glyphicon glyphicon-trash
-          text-danger'></span>"), cart_item_path(item) , method: :delete,
-          data: {confirm: t(".confirm_delete")} %>
-        </td>
-    </tr>
-  <% end %>
-  </tbody>
+  <tr>
+    <td> <%= link_to (fa_icon "shopping-cart", text: t(".add")) , root_path, class: "btn btn-primary" %>
+    </td>
+    <td> <%= link_to (fa_icon "times", text: t(".delete_all")) , root_path, class: "btn btn-danger" %>
+    </td>
+    <td> <%= link_to (fa_icon "money", text: t(".checkout")) , new_order_path , class: "btn btn-warning" %>
+    </td>
+  </tr>
 </table>
 </div>
 <%= paginate @items, theme: "twitter-bootstrap-3" %>

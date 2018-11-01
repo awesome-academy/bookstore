@@ -19,6 +19,7 @@
           <% if logged_in? %>
            <%= form_for @cart_item, remote: true do |f| %>
              <%= f.number_field :quantity, min: 1, max: @book.quantity_in_store %>
+             <%= f.hidden_field :paideach, value: @book.price %>
              <%= f.hidden_field :user_id, value: current_user.id %>
              <%= f.hidden_field :book_id, value: @book.id %>
              <%= f.submit (t".cart"), class: "btn btn-success" %>
@@ -39,4 +40,3 @@
       </div>
     </div>
   </div>
-</div>

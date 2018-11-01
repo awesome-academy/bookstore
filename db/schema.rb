@@ -59,13 +59,10 @@ ActiveRecord::Schema.define(version: 2018_10_26_133903) do
     t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "carts", force: :cascade do |t|
-    t.text "description"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.index ["book_id"], name: "index_cart_items_on_book_id"
+    t.index ["cart_id", "book_id"], name: "index_cart_items_on_cart_id_and_book_id", unique: true
+    t.index ["cart_id"], name: "index_cart_items_on_cart_id"
   end
 
   create_table "categories", force: :cascade do |t|

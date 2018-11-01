@@ -54,8 +54,7 @@ node_modules/
 /test/*
 .rake_tasks~
 /public/*
-/public/upload
-
+/public/uploads
 config/settings.local.yml
 config/settings/*.local.yml
 config/environments/*.local.yml

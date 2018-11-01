@@ -17,7 +17,9 @@ class User < ApplicationRecord
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :likes_for_book, class_name: Emotion.name, dependent: :destroy
   has_many :favorite_books, through: :likes_for_book, source: :book, dependent: :destroy
-  has_one :cart, dependent: :destroy
+  has_many :cart_items , dependent: :destroy
+  has_many :books_in_cart , through: :cart_items, source: :book, dependent: :destroy
+  has_many :orders, dependent: :destroy
   attr_accessor :remember_token
   belongs_to :payment
   before_save :email_downcase
@@ -56,6 +58,14 @@ class User < ApplicationRecord
 
   def forget
     update remember_digest: nil
+  end
+
+  def add_to_cart(book)
+    books_in_cart << book
+  end
+
+  def delete_from_cart(book)
+    books_in_cart.delete(book)
   end
 
   def like(book)

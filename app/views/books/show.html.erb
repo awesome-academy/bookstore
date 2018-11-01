@@ -1,36 +1,41 @@
 <% provide(:title, @book.title )%>
 <div class="container">
-  <div class="row">
-    <div class="card-book h-100"><%= link_to image_tag(@book.image.url,
-      alt: t(".alt") , size: Settings.books.show.size) %>
-    <div class="card-footer">
-      <div class="row">
-        <div class="col-lg-5">
-          <%= render "like_form" if logged_in? %>
+<div class="row">
+<div class="card-book show-book"><%= link_to image_tag(@book.image.url , alt: t(".alt") , size: Settings.books.show.size ) %>
+  <div class="card-footer">
+    <div class="row">
+      <div class="col-lg-5">
+       <%= render "like_form" if logged_in? %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-lg-5" id="book-card-wrap" >
+  <div class="section" >
+    <h1><%= @book.title %></h1>
+     </div>
+      <div class="section" ><h4><%= number_to_currency(@book.price, :locale => :vi) %></h4></div>
+        <div class="section" >
+          <% if logged_in? %>
+           <%= form_for @cart_item, remote: true do |f| %>
+             <%= f.number_field :quantity, min: 1, max: @book.quantity_in_store %>
+             <%= f.hidden_field :user_id, value: current_user.id %>
+             <%= f.hidden_field :book_id, value: @book.id %>
+             <%= f.submit (t".cart"), class: "btn btn-success" %>
+           <% end %>
+          <% end %>
+        </div>
+        <p><%= @book.description %></p>
+        <% if logged_in? %>
+        <div class="row">
+          <div class="field-comment">
+            <%= render "comments/form" %>
+          </div>
+        </div>
+        <% end %>
+        <div class="col s12 m8 offset-m2 l6 offset-l0 all-comment">
+          <%= render partial: "comments/comment", collection: @comments %>
         </div>
       </div>
     </div>
   </div>
-  <div class="col-lg-5" id="book-card-wrap" >
-    <div class="section" >
-      <h1><%= @book.title %></h1>
-    </div>
-    <div class="section" ><h4><%= number_to_currency(@book.price, :locale => :vi) %></h4></div>
-    <div class="section" >
-      <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"
-        aria-hidden="true"></span><%= t ".dathang" %></button>
-    </div>
-    <p><%= @book.description %></p>
-    <% if logged_in? %>
-    <div class="row">
-      <div class="field-comment">
-        <%= render "comments/form" %>
-      </div>
-    </div>
-    <% end %>
-    <div class="col s12 m8 offset-m2 l6 offset-l0 all-comment">
-      <%= render partial: "comments/comment", collection: @comments %>
-    </div>
-  </div>
-  </div>
-</div>

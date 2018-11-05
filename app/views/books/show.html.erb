@@ -1,24 +1,25 @@
 <% provide(:title, @book.title )%>
 <div class="container">
-<div class="row">
-<div class="card-book h-100"><%= link_to image_tag(@book.image, alt: t(".alt") , size: t(".size") ) %>
-  <div class="card-footer">
-    <div class="row">
-    <div class="col-lg-5">
-    <%= render "like_form" if logged_in? %>
-    </div>
-    </div>
-  </div>
-</div>
-<div class="col-lg-5" id="book-card-wrap" >
-  <div class="section" >
-    <h1><%= @book.title %></h1>
-     </div>
-      <div class="section" ><h4><%= @book.price%>đ</h4></div>
-        <div class="section" >
-          <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><%= t ".dathang" %></button>
+  <div class="row">
+    <div class="card-book h-100"><%= link_to image_tag(@book.image.url,
+    alt: t(".alt") , size: Settings.books.show.size) %>
+    <div class="card-footer">
+      <div class="row">
+        <div class="col-lg-5">
+          <%= render "like_form" if logged_in? %>
         </div>
-        <p><%= @book.description %></p>
       </div>
     </div>
   </div>
+  <div class="col-lg-5" id="book-card-wrap" >
+    <div class="section" >
+      <h1><%= @book.title %></h1>
+    </div>
+    <div class="section" ><h4><%= number_to_currency(@book.price, :locale => :vi) %></h4></div>
+    <div class="section" >
+      <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><%= t ".dathang" %></button>
+    </div>
+    <p><%= @book.description %></p>
+  </div>
+</div>
+</div>

@@ -1,4 +1,7 @@
 en:
+  require_login:
+    please_login: "Please login!"
+
   shared:
     error_messages:
       the_form: "The form contains: "
@@ -129,6 +132,7 @@ en:
       romance: "Romance"
       mystery: "Mystery"
       art: "Art"
+
   blogs:
     create:
       created_sucess: "Blog created sucess!"
@@ -140,15 +144,15 @@ en:
       blog_title: "Blog"
       blog_name: "HTBlog"
       read_button: "Read More"
+
   books:
     like:
-      liked: " người đã thích"
+      liked: " like"
     unlike:
-      liked: " người đã thích"
+      liked: " like"
     show:
-      dathang: "Đặt hàng"
-      alt: "Khong hien thi"
-      size: "200x250"
+      dathang: "Add to cart"
+      alt: "Not display"
     index:
      home_title: "Home"
      welcome: "Welcome to HTBookstore"

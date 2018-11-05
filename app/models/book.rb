@@ -12,6 +12,9 @@ class Book < ApplicationRecord
       allow_destroy:true
   mount_uploader :image, PictureUploader
 
-  scope :search, ->(title) {where("title LIKE ?", "%#{title}%")}
+  scope :order_by_created, -> {order created_at: :desc}
+  scope :search, (lambda do |title|
+    where("title LIKE ?", "%#{title}%") unless title.nil?
+  end)
 
 end

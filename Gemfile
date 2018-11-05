@@ -12,7 +12,7 @@ gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "config"
 gem "faker"
-gem "bootstrap-sass", '3.3.7'
+gem "bootstrap-sass", "3.3.7"
 gem "jquery-rails"
 gem "config"
 gem "bcrypt"
@@ -22,9 +22,10 @@ gem "ckeditor"
 gem "ffaker"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
+gem "font-awesome-rails"
 gem "jquery-ui-rails"
-gem 'jquery-rails'
-gem 'rails-ujs'
+gem "jquery-rails"
+gem "rails-ujs"
 
 group :development, :test do
   gem "sqlite3", "1.3.13"

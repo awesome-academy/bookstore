@@ -37,6 +37,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+  end
+
+  def index
+    @books = @user.favorite_books.paginate page: params[:page] , per_page: Settings.admin.user.per_page
+  end
+
   private
 
   def user_params

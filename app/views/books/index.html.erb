@@ -20,10 +20,10 @@
           <h5><%=book.price.to_s%>đ</h5>
           </div>
           <div class="card-footer">
-            <button type="button" class="btn-btn-primary" ><%= link_to book.users_liked.count.to_s << (t ".liked") , book_path(book) %> </button>
+           <%= link_to book.users_liked.count.to_s << (t ".liked") , book_path(book), method: :get %>
         </div>
       </div>
     </div>
 <% end %>
 </div>
-<%= will_paginate %>
+<%= paginate @books, theme: "twitter-bootstrap-3" %>

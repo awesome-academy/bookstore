@@ -2,7 +2,7 @@ class Admin::BooksController < Admin::BaseController
 
   def index
     @books = Book.order_by_created.search(params[:search]).page(params[:page])
-      .per(Settings.admin.book.per_page)
+      .per Settings.book.per_page
     respond_to do |format|
       format.js
       format.html

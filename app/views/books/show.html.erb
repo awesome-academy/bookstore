@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="card-book h-100"><%= link_to image_tag(@book.image.url,
-    alt: t(".alt") , size: Settings.books.show.size) %>
+      alt: t(".alt") , size: Settings.books.show.size) %>
     <div class="card-footer">
       <div class="row">
         <div class="col-lg-5">
@@ -17,9 +17,20 @@
     </div>
     <div class="section" ><h4><%= number_to_currency(@book.price, :locale => :vi) %></h4></div>
     <div class="section" >
-      <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><%= t ".dathang" %></button>
+      <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"
+        aria-hidden="true"></span><%= t ".dathang" %></button>
     </div>
     <p><%= @book.description %></p>
+    <% if logged_in? %>
+    <div class="row">
+      <div class="field-comment">
+        <%= render "comments/form" %>
+      </div>
+    </div>
+    <% end %>
+    <div class="col s12 m8 offset-m2 l6 offset-l0 all-comment">
+      <%= render partial: "comments/comment", collection: @comments %>
+    </div>
   </div>
-</div>
+  </div>
 </div>

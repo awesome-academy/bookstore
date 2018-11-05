@@ -178,3 +178,13 @@ en:
      liked: " người đã thích"
     form:
       hi: "prohibited this blog from being saved: "
+
+  comments:
+    form:
+      comment: "Comment"
+      add_comment: "Add comment"
+      alert: "An error occurred..."
+    comment:
+      post: "Post"
+      ago: "ago."
+      delete: delete

@@ -1,9 +1,13 @@
 //= require rails-ujs
 //= require jquery
-//= require bootstrap
-//= require activestorage
-//= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap
+//= require activestorage
 //= require ckeditor/init
-//= require_tree .
+//= require i18n
+//= require i18n.js
+//= require i18n/translations
+//= require authors
+//= require book
+//= require create_comment

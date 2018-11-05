@@ -13,8 +13,8 @@ class Book < ApplicationRecord
   mount_uploader :image, PictureUploader
 
   scope :order_by_created, -> {order created_at: :desc}
+  scope :select_book, -> {select :id, :title, :price, :description}
   scope :search, (lambda do |title|
     where("title LIKE ?", "%#{title}%") unless title.nil?
   end)
-
 end

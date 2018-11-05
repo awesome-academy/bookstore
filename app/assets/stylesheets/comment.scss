@@ -1,0 +1,81 @@
+@import "materialize";
+@import 'color';
+.card-panel {
+  transition: box-shadow .25s;
+  padding: 24px;
+  margin: 0.5rem 0 1rem 0;
+  border-radius: 2px;
+  background-color: $white
+}
+
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
+}
+
+.z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2)
+}
+
+.valign-wrapper {
+  display: flex;
+  align-items: center
+}
+
+.black-text {
+  color: $black !important
+}
+
+.field-comment {
+  margin-left: 10px;
+  margin-right: 15px;
+  padding: 6px;
+  width: 100%;
+}
+
+.thumbnail {
+    padding:0px;
+}
+
+.panel {
+  position:relative;
+}
+
+.panel>.panel-heading:after,.panel>.panel-heading:before{
+  position:absolute;
+  top:11px;left:-16px;
+  right:100%;
+  width:0;
+  height:0;
+  display:block;
+  content:" ";
+  border-color:transparent;
+  border-style:solid solid outset;
+  pointer-events:none;
+}
+
+.panel>.panel-heading:after{
+  border-width:7px;
+  border-right-color:$gray-97;
+  margin-top:1px;
+  margin-left:2px;
+}
+
+.panel>.panel-heading:before{
+  border-right-color:$gray-86;
+  border-width:8px;
+}
+
+.delete-comment {
+  font-size: 10px;
+  float: right;
+  padding: 18px 0 0 0;
+}
+
+.panel-custom {
+  width: 450%
+}
+
+.btn-comment {
+  width: 20%;
+  float: right;
+}

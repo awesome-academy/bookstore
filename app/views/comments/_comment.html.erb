@@ -8,13 +8,17 @@
   <div class="col-sm-6 comment-show">
     <div class="panel panel-default panel-custom">
       <div class="panel-heading">
-        <strong><%= comment.user.name %></strong> <span class="text-muted">
-          <%= t ".post" %> <%= time_ago_in_words(comment.created_at) %> <%= t ".ago" %></span>
+        <strong><%= comment.user.name %></strong>
+        <span class="text-muted">
+          <%= t ".post" %> <%= time_ago_in_words(comment.created_at) %> <%= t ".ago" %>
+        </span>
       </div>
       <div class="panel-body">
         <%= comment.content %>
         <% if current_user?(comment.user) %>
-        <%= link_to t(".delete"), "#", class: "delete-comment" %>
+        <%= link_to t(".delete"), book_comment_path(@book, comment),
+          method: :delete, data: {confirm: I18n.t("comments.destroy.sure")},
+            remote: true, class: "delete-comment" %>
         <% end %>
       </div>
     </div>

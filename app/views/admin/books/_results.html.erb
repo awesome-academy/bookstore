@@ -2,7 +2,7 @@
   <tr>
     <td class="text-c">
       <% params[:page] ||= Settings.admin.book.page_index %>
-      <%= index_for params[:page], index, Settings.admin.book.per_page %>
+      <%= index_for params[:page], index, Settings.book.per_page %>
     </td>
     <td class="text-c"><%= image_tag book.image.url, :size => Settings.admin.book.image_size %> </td>
     <td class="text-c"><%= book.title %></td>
@@ -21,6 +21,6 @@
             text-danger'></span>"), [:admin, book], method: :delete,
             data: {confirm: t(".confirm_delete")} %>
     </td>
-    <td class="text-c"><%= link_to t(".update"), "#" %></td>
+    <td class="text-c"><%= link_to t(".update"), edit_admin_book_path(book) %></td>
   </tr>
 <% end %>

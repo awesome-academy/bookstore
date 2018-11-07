@@ -101,8 +101,10 @@ en:
       update_button: "Update profile"
       my_profile: "My profile"
       time_default: "%d/%m/%Y"
+
   admin:
     books:
+      book_not_found: "Book not found!"
       index:
         allbook: "All book"
         index: "Index"
@@ -118,11 +120,23 @@ en:
         update: "Update"
         search_title: "Search by book's name"
         search: "Search"
-        confirm_delete: "You sure?"
-
+        confirm_delete: You sure?
       destroy:
-        delete_success: "Deleted book success!"
-        deleted_fail: "Deleted book fail!"
+        delete_success: Deleted book success!
+        deleted_fail: Deleted book fail!
+      new:
+        addbook: "Add book"
+        save: "Save"
+      create:
+        created_success: "Created book success!"
+        created_faild: "Created book fail!"
+      edit:
+        edit_book: "Update book"
+        save: "Save"
+      update:
+        updated_success: "Updated book success!"
+        updated_fail: "Updated book fail!"
+
     users:
       destroy:
         cant: "Can't delete admin"
@@ -131,7 +145,6 @@ en:
       users_table:
         you_want: "You want to delete user: "
         are_you: ". Are you sure?"
-
       index:
         delete: "Delete"
         users_title: "All users"

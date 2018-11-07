@@ -12,9 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2018_11_11_141852) do
 
-  create_table "author_details", force: :cascade do |t|
-    t.integer "author_id"
+  create_table "author_books", force: :cascade do |t|
     t.integer "book_id"
+    t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

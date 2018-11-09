@@ -1,29 +1,18 @@
 <% provide(:title, (t ".home_title"))%>
-<div class="post" >
-  <h2 class="title"><%=(t ".welcome")%></h2>
-   <div class="entry">
-    <p><%= (t ".this") %><strong> <%=(t ".store")%> </strong></p>
+<div>
+  <div class="post">
+    <h2 class="title"><%=(t ".welcome")%></h2>
+    <div class="entry">
+      <p>This is <strong> <%=(t ".store")%> </strong></p>
     </div>
     <% if logged_in? %>
     <button id="delete-button" type="button" class="btn btn-danger"><i class="fa fa-heart"></i><%= link_to (t ".favorite"), user_favorite_books_path(current_user.id) %></button>
     <% end %>
   </div>
-<div class="row">
-<% @books.each do |book| %>
-  <div class="col-lg-4 col-md-4 mb-4">
-    <div class="card-book">
-      <%= link_to image_tag( book.image.url , size: Settings.admin.user_table.size ), book_path(book)%>
-        <div class="card-body">
-          <h4 class="card-title">
-            <%= link_to book.title, book_path(book) %>
-          </h4>
-          <h5><%=book.price.to_s%>đ</h5>
-          </div>
-          <div class="card-footer">
-           <%= link_to book.users_liked.count.to_s << (t ".liked") , book_path(book), method: :get %>
-        </div>
-      </div>
-    </div>
-<% end %>
+  <div class="all-book row">
+    <%= render @books %>
+  </div>
+  <div class="paginate-book">
+    <%= paginate @books, theme: "twitter-bootstrap-3" %>
+  </div>
 </div>
-<%= paginate @books, theme: "twitter-bootstrap-3" %>

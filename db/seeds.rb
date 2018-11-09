@@ -4,6 +4,7 @@ Book.create!(title:  "Tokyo Hoàng Đạo Án",
              publisher: "Nhã Nam",
              price: 160000,
              quantity_in_store: "6",
+             image: Rails.root.join("app/assets/images/kyoto.jpg").open,
              category_id: "1",
              description: "Theo chân Lôi Mễ đi qua 2 cuốn tiểu thuyết, khả năng phân tích phán đoán tâm lý của mình cũng có tiến bộ đôi chút. Phải nói rằng, lúc đầu, có quá nhiều chi tiết, có quá nhiều nhân vật và mình không thể xâu chuỗi và tìm ra thủ phạm. Suy nghĩ cả buổi chiều, cuối cùng, suy đoán của mình cũng đúng.Khi tấm màn bí mật lộ ra, mình thật sự thật sự hạnh phúc và vui mừng. Không phải mừng vì truyện hay và vui mừng vì khả năng phán đoán ban đầu của mình rất chính xác. ")
 Author.create!( name: "Hoàng Trọng Hiếu",
@@ -17,6 +18,7 @@ Book.create!(title:  "Phía sau nghi can X",
              publisher: "Nhã Nam",
              price: 190000,
              quantity_in_store: "2",
+             image: Rails.root.join("app/assets/images/book2.jpg").open,
              category_id: "2",
              description: "Việc Togashi đột ngột xuất hiện sau 5 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
 Author.create!( name: "Hoàng Trọng Hiếu",
@@ -30,6 +32,7 @@ Book.create!(title:  "Bạch Dạ Hành",
              publisher: "Nhã Nam",
              price: 190000,
              quantity_in_store: "3",
+             image: Rails.root.join("app/assets/images/book3.jpg").open,
              category_id: "3",
              description: "Việc Togashi đột ngột xuất hiện sau 5 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
 Author.create!( name: "Hoàng Trọng Hiếu",
@@ -43,6 +46,7 @@ Book.create!(title:  "Đứa trẻ hư",
              publisher: "Nhã Nam",
              price: 190000,
              quantity_in_store: "4",
+             image: Rails.root.join("app/assets/images/book4.jpg").open,
              category_id: "4",
              description: "Việc Togashi đột ngột xuất hiện sau 5 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
 Author.create!( name: "Hoàng Trọng Hiếu",
@@ -56,6 +60,7 @@ Book.create!(title:  "Bill Gates: Tham Vọng Lớn Lao Và Quá Trình Hình Th
              publisher: "Nhã Nam",
              price: 190000,
              quantity_in_store: "5",
+             image: Rails.root.join("app/assets/images/book5.jpg").open,
              category_id: "5",
              description: "Việc Togashi đột ngột xuất hiện sau 5 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
 Author.create!( name: "Hoàng Trọng Hiếu",
@@ -69,6 +74,7 @@ Book.create!(title:  "Steve Jobs - Những Bí Quyết Đổi Mới Và Sáng T�
              publisher: "Nhã Nam",
              price: 190000,
              quantity_in_store: "6",
+             image: Rails.root.join("app/assets/images/book6.jpg").open,
              category_id: "6",
              description: "Việc Togashi đột ngột xuất hiện sau 6 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
 Author.create!( name: "Hoàng Trọng Hiếu",
@@ -84,6 +90,7 @@ AuthorDetail.create!(book_id: "6", author_id: "6", id: "6")
              publisher: "Nhã Nam",
              price: 190000,
              quantity_in_store: n,
+             image: Rails.root.join("app/assets/images/book#{n}.jpg").open,
              category_id: n,
              description: "Việc Togashi đột ngột xuất hiện sau n năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
   Author.create!( name: name,
@@ -118,37 +125,4 @@ User.create! name: name,
              dob: "1/1/1991",
              is_admin: false,
              payment_id: 1
-
-10.times do |n|
-  name = FFaker::Name.name
-  birthday = "10/10/1960"
-  Author.create! name: name,
-                birthday: birthday
-end
-
-Category.create!  name: "Science fiction",
-                  description: "Science fiction book"
-Category.create!  name: "Psychology",
-                  description: "Psychology book"
-Category.create!  name: "Comics",
-                  description: "Comics book"
-Category.create!  name: "Romance",
-                  description: "Romance book"
-Category.create!  name: "Mystery",
-                  description: "Mystery book"
-
-30.times do|n|
-  title = "Book-#{n+1}"
-  publisher = "Publisher-#{n+1}"
-  des = "Book-#{n+1} description"
-  Book.create!(title: title, publisher: publisher, price: 10000,
-    quantity_in_store: rand(1..10), description: des, category_id: rand(1..5))
-end
-
-30.times do |n|
-  AuthorDetail.create!(book_id: n+1, author_id: rand(1..10))
-end
-
-10.times do |n|
-   AuthorDetail.create!(book_id: n+10, author_id: rand(1..10))
 end

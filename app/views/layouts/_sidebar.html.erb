@@ -3,12 +3,10 @@
 	<li>
 		<h2><%=t ".search"%></h2>
 		<div id="search" >
-			<form method="get" action="#">
-				<div>
-					<input type="text" name="s" id="search-text" value="" />
-					<input type="submit" id="search-submit" value="" />
-				</div>
-			</form>
+			<%= form_tag(books_path, method: "get", remote: true) do %>
+			<%= text_field_tag :book_name_search, params[:book_name_search],
+				class: "form-control", placeholder: "Search book by name", id: "book_name_filter", data: {autocomplete_source: books_path} %>
+			<% end %>
 		</div>
 		<div id="inside-post">&nbsp;</div>
 	</li>

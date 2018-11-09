@@ -1,5 +1,5 @@
-<%= form_for [@book, @comment] do |f| %>
-  <%= f.text_field :content, class: "form-control", :placeholder => t(".add_comment") %>
-  <%= f.hidden_field :book_id, value: @book.id %>
+<%= form_for [book, book.comments.build], remote: true do |f| %>
+  <%= f.hidden_field :book_id, value: book.id %>
+  <%= f.text_field :content, class: "form-control", placeholder: t(".add_comment") %>
   <%= f.submit t(".comment"), class: "btn-comment" %>
 <% end %>

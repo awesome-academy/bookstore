@@ -27,12 +27,16 @@ User.create! name: "Admin",
                 birthday: birthday
 end
 
-5.times do |n|
-  name = "Category-#{n+1}"
-  description = "Book type #{n+1}"
-  Category.create! name: name,
-                  description: description
-end
+Category.create!  name: "Science fiction",
+                  description: "Science fiction book"
+Category.create!  name: "Psychology",
+                  description: "Psychology book"
+Category.create!  name: "Comics",
+                  description: "Comics book"
+Category.create!  name: "Romance",
+                  description: "Romance book"
+Category.create!  name: "Mystery",
+                  description: "Mystery book"
 
 30.times do|n|
   title = "Book-#{n+1}"

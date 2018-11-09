@@ -10,9 +10,8 @@ Book.create!(title:  "Tokyo Hoàng Đạo Án",
 Author.create!( name: "Hoàng Trọng Hiếu",
       birthday: "18/12/1996",
       id: "1")
-AuthorDetail.create!(book_id: "1", author_id: "1", id: "1")
 
-Category.create!(id: "2", name: "Mystery", description: "Truyen trinh tham")
+Category.create!(id: "2", name: "Psychology", description: "Psychology book")
 Book.create!(title:  "Phía sau nghi can X",
              id: "2",
              publisher: "Nhã Nam",
@@ -24,9 +23,8 @@ Book.create!(title:  "Phía sau nghi can X",
 Author.create!( name: "Hoàng Trọng Hiếu",
       birthday: "18/12/1996",
       id: "2")
-AuthorDetail.create!(book_id: "2", author_id: "2", id: "2")
 
-Category.create!(id: "3", name: "Mystery", description: "Truyen trinh tham")
+Category.create!(id: "3", name: "Science fiction", description: "Science fiction book")
 Book.create!(title:  "Bạch Dạ Hành",
              id: "3",
              publisher: "Nhã Nam",
@@ -38,9 +36,8 @@ Book.create!(title:  "Bạch Dạ Hành",
 Author.create!( name: "Hoàng Trọng Hiếu",
       birthday: "18/12/1996",
       id: "3")
-AuthorDetail.create!(book_id: "3", author_id: "3", id: "3")
 
-Category.create!(id: "4", name: "Mystery", description: "Truyen trinh tham")
+Category.create!(id: "4", name: "Comics", description: "Comics book")
 Book.create!(title:  "Đứa trẻ hư",
              id: "4",
              publisher: "Nhã Nam",
@@ -52,9 +49,8 @@ Book.create!(title:  "Đứa trẻ hư",
 Author.create!( name: "Hoàng Trọng Hiếu",
       birthday: "18/12/1996",
       id: "4")
-AuthorDetail.create!(book_id: "4", author_id: "4", id: "4")
 
-Category.create!(id: "5", name: "Mystery", description: "Truyen trinh tham")
+Category.create!(id: "5", name: "Romance" , description: "Romance book")
 Book.create!(title:  "Bill Gates: Tham Vọng Lớn Lao Và Quá Trình Hình Thành Đế Chế Microsoft (Tái Bản 2017)",
              id: "5",
              publisher: "Nhã Nam",
@@ -66,9 +62,8 @@ Book.create!(title:  "Bill Gates: Tham Vọng Lớn Lao Và Quá Trình Hình Th
 Author.create!( name: "Hoàng Trọng Hiếu",
       birthday: "18/12/1996",
       id: "5")
-AuthorDetail.create!(book_id: "5", author_id: "5", id: "5")
 
-Category.create!(id: "6", name: "Mystery", description: "Truyen trinh tham")
+Category.create!(id: "6", name: "Novel", description: "Tieu thuyet")
 Book.create!(title:  "Steve Jobs - Những Bí Quyết Đổi Mới Và Sáng Tạo (Tái Bản 2017)",
              id: "6",
              publisher: "Nhã Nam",
@@ -80,7 +75,6 @@ Book.create!(title:  "Steve Jobs - Những Bí Quyết Đổi Mới Và Sáng T�
 Author.create!( name: "Hoàng Trọng Hiếu",
       birthday: "18/12/1996",
       id: "6")
-AuthorDetail.create!(book_id: "6", author_id: "6", id: "6")
 
 7.upto(25) do |n|
   name  = Faker::Name.name
@@ -96,7 +90,6 @@ AuthorDetail.create!(book_id: "6", author_id: "6", id: "6")
   Author.create!( name: name,
       birthday: "18/12/1996",
       id: n)
-  AuthorDetail.create!(book_id: n, author_id: n, id: n)
 end
 
 5.times do |n|
@@ -125,4 +118,23 @@ User.create! name: name,
              dob: "1/1/1991",
              is_admin: false,
              payment_id: 1
+end
+
+Category.create!  name: "Science fiction",
+                  description: "Science fiction book"
+Category.create!  name: "Psychology",
+                  description: "Psychology book"
+Category.create!  name: "Comics",
+                  description: "Comics book"
+Category.create!  name: "Romance",
+                  description: "Romance book"
+Category.create!  name: "Mystery",
+                  description: "Mystery book"
+
+15.times do |n|
+  AuthorDetail.create!(book_id: n+1, author_id: rand(1..10))
+end
+
+10.times do |n|
+   AuthorDetail.create!(book_id: n+10, author_id: rand(1..10))
 end

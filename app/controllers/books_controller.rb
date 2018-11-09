@@ -7,8 +7,8 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.select_book.order_by_created.page(params[:page])
-      .per Settings.book.per_page
+    @books = Book.filter_by_book_type(params[:category])
+      .page(params[:page]).per(Settings.admin.book.per_page)
   end
 
   private

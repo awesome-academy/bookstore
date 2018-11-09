@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_024221) do
+ActiveRecord::Schema.define(version: 2018_10_26_133903) do
 
   create_table "author_details", force: :cascade do |t|
     t.integer "author_id"
@@ -59,8 +59,6 @@ ActiveRecord::Schema.define(version: 2018_11_05_024221) do
     t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.index ["cart_id", "book_id"], name: "index_cart_items_on_cart_id_and_book_id", unique: true
   end
 
   create_table "carts", force: :cascade do |t|

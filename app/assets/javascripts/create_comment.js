@@ -13,7 +13,7 @@ $(function(){
       $('.all-comment').prepend(data.content);
       $('#comment_content').val("");
     }).error(function(){
-      alert(I18n.t("comments.form.alert"));
+      alert('An error occurred...');
     });
   });
 });

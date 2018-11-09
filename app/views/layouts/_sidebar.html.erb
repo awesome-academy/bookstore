@@ -15,12 +15,12 @@
 	<li>
 		<h2><%= t ".category"%></h2>
 		<ul>
-			<li> <%= link_to (t ".sc"), "#" %></li>
-			<li><%= link_to (t ".psychology") , "#" %></li>
-			<li><%= link_to (t ".comics"), "#" %></li>
-			<li><%= link_to ( t ".romance"), "#" %></a></li>
-			<li><%= link_to ( t ".mystery"), "#" %></a></li>
-			<li><%= link_to ( t ".art"), "#" %></a></li>
+			<li> <%= link_to (t ".sc"), books_path(:category => t(".sc")) %></li>
+			<li><%= link_to (t ".psychology") , books_path(:category => t(".psychology")) %></li>
+			<li><%= link_to (t ".comics"), books_path(:category => t(".comics")) %></li>
+			<li><%= link_to ( t ".romance"), books_path(:category => t(".romance")) %></a></li>
+			<li><%= link_to ( t ".mystery"), books_path(:category => t(".mystery")) %></a></li>
+			<li><%= link_to ( t ".art"), books_path(:category => t(".art")) %></a></li>
 		</ul>
 	</li>
 </div>

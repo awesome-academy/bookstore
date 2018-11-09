@@ -10,7 +10,6 @@ class BooksController < ApplicationController
   def index
     @books = Book.filter_by_book_type(params[:category])
       .page(params[:page]).per(Settings.admin.book.per_page)
-
     if params[:book_name_search]
       @books = Book.search(params[:book_name_search]).page(params[:page]).per(Settings.book.per_page)
       respond_to do |format|
@@ -18,8 +17,8 @@ class BooksController < ApplicationController
         format.js {render :index}
       end
     elsif params[:term]
-      @books_auto = Book.search(params[:term]).page(params[:page]).per(Settings.book.per_page)
-      render json: @books_auto.map(&:title)
+      @bookss = Book.search(params[:term]).page(params[:page]).per(Settings.book.per_page)
+      render json: @bookss.map(&:title)
     end
   end
 

@@ -1,37 +1,39 @@
 <% provide :title, t(".allbook") %>
 <h1><%= t ".allbook" %></h1>
-<%= form_tag(admin_books_path, method: :get, remote: true) do %>
-<div class="row">
-  <div class="form-group col-xs-6 col-md-4">
-    <%= text_field_tag :search, params[:search], class: "form-control",
+<div>
+  <%= form_tag(admin_books_path, method: :get, remote: true) do %>
+  <div class="row">
+    <div class="form-group col-xs-6 col-md-4">
+      <%= text_field_tag :search, params[:search], class: "form-control",
       placeholder: t(".search_title") %>
-    <%= submit_tag t(".search"), class: "btn btn-primary" %>
+    </div>
+      <%= submit_tag t(".search"), class: "btn btn-primary btn-search-book" %>
+      <%= link_to "Add book", new_admin_book_path, class: "btn btn-primary btn-add-book" %>
   </div>
-</div>
-<% end %>
-<div id="books-table">
-<table class="table table-hover bg-table ls-books">
-  <thead class="title_table">
-    <tr>
-      <th class="text-c"><%= t ".index" %></th>
-      <th class="text-c"><%= t ".image" %></th>
-      <th class="text-c"><%= t ".title" %></th>
-      <th class="text-c"><%= t ".author" %></th>
-      <th class="text-c"><%= t ".publisher" %></th>
-      <th class="text-c"><%= t ".category" %></th>
-      <th class="text-c"><%= t ".price" %></th>
-      <th class="text-c"><%= t ".quantity" %></th>
-      <th class="text-c"><%= t ".description" %></th>
-      <th class="text-c"><%= t ".delete" %></th>
-      <th class="text-c"><%= t ".update" %></th>
-    </tr>
-  </thead>
-  <tbody class="result-search">
-    <%= render "results" %>
-  </tbody>
-</table>
-</div>
-<%= paginate @books, theme: "twitter-bootstrap-3" %>
-<div class="paginator">
-  <%= paginate @books, theme: "twitter-bootstrap-3" %>
+  <% end %>
+  <div id="books-table">
+    <table class="table table-hover bg-table ls-books">
+      <thead class="title_table">
+        <tr>
+          <th class="text-c"><%= t ".index" %></th>
+          <th class="text-c"><%= t ".image" %></th>
+          <th class="text-c"><%= t ".title" %></th>
+          <th class="text-c"><%= t ".author" %></th>
+          <th class="text-c"><%= t ".publisher" %></th>
+          <th class="text-c"><%= t ".category" %></th>
+          <th class="text-c"><%= t ".price" %></th>
+          <th class="text-c"><%= t ".quantity" %></th>
+          <th class="text-c"><%= t ".description" %></th>
+          <th class="text-c"><%= t ".delete" %></th>
+          <th class="text-c"><%= t ".update" %></th>
+        </tr>
+      </thead>
+      <tbody class="result-search">
+        <%= render "results" %>
+      </tbody>
+    </table>
+  </div>
+  <div class="paginator">
+    <%= paginate @books, theme: "twitter-bootstrap-3" %>
+  </div>
 </div>

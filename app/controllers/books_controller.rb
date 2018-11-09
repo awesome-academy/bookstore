@@ -4,6 +4,7 @@ class BooksController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @book.comments.order_by_created
+    @cart_item = CartItem.new
   end
 
   def index

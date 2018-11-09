@@ -7,6 +7,15 @@ en:
       the_form: "The form contains: "
       error: "error"
 
+  cart_items:
+    index:
+      title: "Your cart"
+    create:
+      add: "Book was added to cart"
+      update: "Cart item's quantity was updated"
+    destroy:
+      sucess: "Deleted cart item successful!"
+
   users:
     user_not_found: "User not found!"
     please_login: "Please login!"
@@ -26,7 +35,6 @@ en:
       updated_success: "User updated success!"
 
     index:
-      favorite_books: "Your favorite books"
       size: "120x140"
       alt: "khong hien thi"
 
@@ -80,11 +88,11 @@ en:
         update: "Update"
         search_title: "Search by book's name"
         search: "Search"
-        confirm_delete: You sure?
+        confirm_delete: "You sure?"
 
       destroy:
-        delete_success: Deleted book success!
-        deleted_fail: Deleted book fail!
+        delete_success: "Deleted book success!"
+        deleted_fail: "Deleted book fail!"
     users:
       destroy:
         cant: "Can't delete admin"
@@ -108,6 +116,11 @@ en:
       store_name: "HTBookstore"
       alt_image: "Ko hien thi"
       about_content: "is a design-minded, multi-disciplinary brand offering objects, events, and experiences related to books and reading. We are based in the Ha Dong and Bac Giang City."
+
+  favorite_books:
+    index:
+      favorite_books: "Your favorite books"
+      title: "Favorite Books"
 
   layouts:
     header:
@@ -161,13 +174,14 @@ en:
 
   books:
     like:
-      liked: " like"
+      liked: " users liked this book"
     unlike:
-      liked: " like"
+      liked: " users liked this book"
     show:
       dathang: "Add to cart"
       alt: "Not display"
       size: "200x250"
+      cart: "Add to cart"
     index:
      home_title: "Home"
      welcome: "Welcome to HTBookstore"
@@ -175,7 +189,7 @@ en:
      posted_by: "Posted by"
      this: "This is"
      favorite: "   YOUR FAVORITE BOOK"
-     liked: " người đã thích"
+     liked: " users liked this book"
     form:
       hi: "prohibited this blog from being saved: "
 

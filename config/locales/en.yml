@@ -188,3 +188,9 @@ en:
       post: "Post"
       ago: "ago."
       delete: delete
+    destroy:
+      sure: "You sure?"
+      success: "Comment deleted success"
+      failed: "Comment deleted fail"
+      sure: "Are you sure?"
+      deleted_fail: "Delete failed!"

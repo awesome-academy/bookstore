@@ -1,6 +1,9 @@
-//= require rails-ujs
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require rails-ujs
+//= require bootstrap
+//= require activestorage
 //= require turbolinks
 //= require bootstrap
 //= require activestorage
@@ -8,6 +11,4 @@
 //= require i18n
 //= require i18n.js
 //= require i18n/translations
-//= require authors
-//= require book
 //= require create_comment

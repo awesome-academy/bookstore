@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
+  before_action :load_book, only: :show
+
   def show
-    @book = Book.find_by id: params[:id]
     @comment = Comment.new
     @comments = @book.comments.order_by_created
   end
@@ -10,4 +11,10 @@ class BooksController < ApplicationController
       .per Settings.book.per_page
   end
 
+  private
+
+  def load_book
+    @book = Book.find_by id: params[:id]
+    return if @book
+  end
 end

@@ -1,6 +1,6 @@
 class Admin::BooksController < Admin::BaseController
   before_action :load_book, only: %i(edit update)
-  before_action :load_all_category, :load_all_author, only: %i(new edit)
+  before_action :load_categories, :load_authors, only: %i(new edit)
 
   def index
     @books = Book.order_by_created.search(params[:search]).page(params[:page])
@@ -68,11 +68,11 @@ class Admin::BooksController < Admin::BaseController
     redirect_to admin_books_url
   end
 
-  def load_all_category
+  def load_categories
     @categories = Category.all
   end
 
-  def load_all_author
+  def load_authors
     @authors = Author.select_author
   end
 end

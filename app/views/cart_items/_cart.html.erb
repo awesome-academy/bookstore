@@ -17,7 +17,7 @@
       </td>
       <td class="text-c"><%= link_to image_tag(item.book.image.url, :size => Settings.admin.book.image_size) , book_path(item.book) %></td>
       <td class="text-c"><%= link_to item.book.title, book_path(item.book) %> </td>
-      <td class="price"><h4><%= number_to_currency(item.paideach, :locale => :vi) %></h4></td>
+      <td class="price"><h4><%= number_to_currency item.paideach, locale: :vi %></h4></td>
       <td class="text-c"><%= item.quantity %></td>
       <td class="text-c">
         <%= link_to raw("<span class='glyphicon glyphicon-trash
@@ -32,7 +32,7 @@
   <tbody>
     <tr>
       <td id="total">
-        <h4><%= t(".total") << number_to_currency(current_user.cart_total, :locale => :vi) %></h4>
+        <h4><%= t(".total", vnd: number_to_currency(current_user.cart_total, locale: :vi)) %></h4>
       </td>
     </tr>
   </tbody>

@@ -3,7 +3,7 @@
 
 <div class="card">
   <%= image_tag @user.avatar.url, :size => Settings.user.avatar_profile %>
-  <h1><%= @user.name %></h1>
+  <h1 class="profile-name"><%= @user.name %></h1>
   <p>
     <%= t ".email" %>
     <%= @user.email %>

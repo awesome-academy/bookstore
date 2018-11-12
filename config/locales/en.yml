@@ -10,12 +10,42 @@ en:
   cart_items:
     index:
       title: "Your cart"
+      checkout: "Checkout"
+      add: "Add more books"
+      delete_all: "Delete all items"
+      delete_item: "Delete items"
+    cart:
+      total: "Total : "
     create:
       add: "Book was added to cart"
       update: "Cart item's quantity was updated"
     destroy:
       sucess: "Deleted cart item successful!"
-
+  orders:
+    show:
+      title: "Order #"
+      customer: "Customer infomations: "
+      order_items: "Order items details: "
+      name: "Name: "
+      dob: "Date of birth: "
+      phone_number: "Phone number: "
+      date: "Created at: "
+      address: "Order address: "
+      payment: "Payment type: payment type "
+      total: "Total pay: "
+    new:
+      none_item: "Your cart is empty! Leave to homepage to add some cart items"
+      order_title: "Your order"
+      order_button: "Create order"
+      user_button: "Update your profile"
+      order_detail: "Please update your details for this order(your profile) : "
+      step_1: "Step 1: We 'll use your profile's name, date of birth, phone number and address for this order's details. Make sure that was fully updated! "
+      required: "If required infomations were updated, you can switch to step 2."
+      step_2: "Step 2: Create this order!"
+    create:
+      updated_success: "Updated profile successful!"
+      order_success: "Created order successful! "
+      pls_update: "Your required infomations is not updated fully!"
   users:
     user_not_found: "User not found!"
     please_login: "Please login!"
@@ -71,8 +101,10 @@ en:
       update_button: "Update profile"
       my_profile: "My profile"
       time_default: "%d/%m/%Y"
+
   admin:
     books:
+      book_not_found: "Book not found!"
       index:
         allbook: "All book"
         index: "Index"
@@ -88,11 +120,27 @@ en:
         update: "Update"
         search_title: "Search by book's name"
         search: "Search"
-        confirm_delete: "You sure?"
-
+        confirm_delete: You sure?
+        download: "Download"
+        export_excel: "Export excel"
       destroy:
-        delete_success: "Deleted book success!"
-        deleted_fail: "Deleted book fail!"
+        delete_success: Deleted book success!
+        deleted_fail: Deleted book fail!
+      results:
+        confirm_delete: "You sure?"
+      new:
+        addbook: "Add book"
+        save: "Save"
+      create:
+        created_success: "Created book success!"
+        created_faild: "Created book fail!"
+      edit:
+        edit_book: "Update book"
+        save: "Save"
+      update:
+        updated_success: "Updated book success!"
+        updated_fail: "Updated book fail!"
+
     users:
       destroy:
         cant: "Can't delete admin"
@@ -101,7 +149,6 @@ en:
       users_table:
         you_want: "You want to delete user: "
         are_you: ". Are you sure?"
-
       index:
         delete: "Delete"
         users_title: "All users"
@@ -123,6 +170,9 @@ en:
       title: "Favorite Books"
 
   layouts:
+    button:
+      drop: "Dropdown button"
+      favorite: "   YOUR FAVORITE BOOK"
     header:
       link_hieu: "https://www.facebook.com/troublehfrom18"
       founder: "Trong Hieu"
@@ -135,6 +185,7 @@ en:
       new_blog: "New blog"
       profile_button: "Profile"
       logout_button: "Log out"
+      cart_button: "Cart"
       design: "Design by"
       size: "1000x400"
       alt: "Khong hien thi"
@@ -182,17 +233,18 @@ en:
       alt: "Not display"
       size: "200x250"
       cart: "Add to cart"
+      book_details: "Book's details"
     index:
      home_title: "Home"
      welcome: "Welcome to HTBookstore"
      store: "HTBookstore"
      posted_by: "Posted by"
      this: "This is"
-     favorite: "   YOUR FAVORITE BOOK"
      liked: " users liked this book"
     form:
       hi: "prohibited this blog from being saved: "
-
+    book:
+      liked: " users liked this book"
   comments:
     form:
       comment: "Comment"

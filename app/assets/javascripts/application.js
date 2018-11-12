@@ -1,3 +1,4 @@
+//= require common
 //= require rails-ujs
 //= require jquery
 //= require bootstrap
@@ -6,6 +7,7 @@
 //= require jquery-ui
 //= require turbolinks
 //= require ckeditor/init
+//= require owl.carousel
 //= require i18n
 //= require i18n.js
 //= require i18n/translations

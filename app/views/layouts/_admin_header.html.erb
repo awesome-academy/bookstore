@@ -3,7 +3,7 @@
     <%= link_to "Book store", admin_books_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Users", "#" %></li>
+        <li><%= link_to "Users", admin_users_path %></li>
         <li><%= link_to "Books", admin_books_path %></li>
         <% if logged_in? %>
           <li class="dropdown">

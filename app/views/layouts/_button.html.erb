@@ -1,0 +1,12 @@
+ <div id="dropdown-button" class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <%= t".drop"%></button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li class="dropdown-item" href="#"></li>
+    <li class="dropdown-item" href="#"></li>
+    <li class="dropdown-item" href="#"></li>
+  </div>
+</div>
+<% if logged_in? %>
+  <button id="favorite-button" type="button" class="btn btn-danger"><i class="fa fa-heart"></i><%= link_to (t ".favorite"), user_favorite_books_path(current_user.id) %></button>
+<% end %>

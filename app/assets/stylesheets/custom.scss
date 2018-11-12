@@ -50,6 +50,8 @@ a {
 /* Header */
 
 #header-wrapper {
+ padding-left: 64px;
+ width: 372px;
 }
 
 #header {
@@ -61,8 +63,8 @@ a {
 /* Logo */
 
 #logo {
-  margin: 0px;
-  padding: 28px 12px;
+  margin: 7px 20px -34px 0px;
+  padding: 28px 2px;
   color: $black;
   h1,p {
   margin: 0;
@@ -76,6 +78,9 @@ a {
   }
   h1 span {
   color: $paci;
+  }
+  h2{
+  font-size: 40px;
   }
   p {
   margin: 0px;
@@ -121,7 +126,7 @@ a {
 #search {
   width: 320px;
   height: 60px;
-  padding: 0px;
+  padding: 46px;
 #blog {
   margin: 0px;
   padding: 30px 0px;
@@ -255,7 +260,7 @@ a {
 
 #content {
   float: left;
-  width: 640px;
+  width: 1000px;
 }
 
 .post {
@@ -318,9 +323,9 @@ a {
 /* Sidebar */
 
 #sidebar {
-  float: right;
+  float: left;
   width: 310px;
-  margin: 0px;
+  margin: 24px 0px 0px 0px;
   padding: 30px 0px 0px 60px;
   color: $black;
 
@@ -333,6 +338,7 @@ a {
   li {
   margin: 0;
   padding: 0;
+  list-style: none;
    ul {
    margin: 0px 0px;
    padding-bottom: 50px;
@@ -560,6 +566,7 @@ body {
 }
 
 /*Books*/
+
 .row {
   display: -ms-flexbox;
   display: flex;
@@ -572,7 +579,7 @@ body {
 .col-lg-4 {
   -ms-flex: 0 0 25%;
     flex: 0 0 25%;
-    max-width: 25%;
+    max-width: 16%;
   }
   .col-1 {
   -ms-flex: 0 0 8.333333%;
@@ -582,7 +589,7 @@ body {
 }
 .col-lg-4{
   position: relative;
-  width: 25%;
+  width: 16%;
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
@@ -606,6 +613,7 @@ body {
 }
 .show-book {
   width: 220px ;
+  margin-bottom: 141px;
 }
 
 .h-100 {
@@ -743,6 +751,7 @@ input {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
+    margin-top: 32px;
     text-align: center;
   a {
     padding: 0 10px;
@@ -768,12 +777,24 @@ button {
     font-style: italic;
 }
 
+.profile-name{
+  margin-top: 12px;
+  color: $gray-a6;
+}
+
 /* Delete button */
 
 #delete-button{
   a {
   color: white;
   }
+}
+
+#favorite-button{
+  a {
+  color: white;
+  }
+  margin: 59px 0px 0px 24px;
 }
 
 /* List users */
@@ -805,8 +826,89 @@ button {
 }
 
 #dropdown-button{
-  padding: 15px 257px;
+  margin: 59px 0px 0px 0px;
   li {
   text-align: center;
+  font-size: 15px;
   }
+}
+
+#total {
+  h4{
+  margin: 0px;
+  padding: 0px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  color: $pink-price;
+  text-align: right;
+  }
+}
+
+#form-order{
+  p{
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  }
+}
+
+.required{
+  color: red;
+  text-decoration: underline;
+}
+
+.price{
+  margin: 0px;
+  padding: 0px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  color: $pink-price;
+  text-align: justify;
+}
+
+.check-box-style {
+  width: 70%;
+  float: left;
+}
+
+.form-label {
+  margin: 10px 0px 5px 0px;
+  font-size: 15px;
+  color: $black
+}
+
+.remember-checkbox {
+  margin: 10px 0 10px 0;
+  font-size: 15px;
+  color: $gray-87;
+}
+
+.checkbox span {
+  margin-left: 0px;
+  font-weight: normal;
+}
+
+.datetime select:nth-child(1) {
+  width: 130px;
+  text-indent: 15px;
+}
+
+#btn-user-like{
+  font-size: 12px;
+}
+
+.htCarousel{
+  width: 1049px;
+  padding-left: 87px;
+  margin: 2px 0px 0px 243px;
+}
+
+.border {
+  border: 1px solid #dee2e6 !important;
+}
+
+.border-success {
+  border-color: #28a745 !important;
 }

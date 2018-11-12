@@ -6,6 +6,7 @@
 			<li><%= link_to (t ".blog_button"), blogs_path %></li>
 			<% if logged_in? %>
           <li><%= link_to (t ".new_blog"), new_blog_path %></li>
+          <li><%= link_to (t ".cart_button"), cart_items_path %></li>
           <li class="right_button"><%= link_to (t ".profile_button"), current_user %></li>
           <li class="right_button"><%= link_to (t ".logout_button"), logout_path, method: :delete %></li>
       </ul>
@@ -13,21 +14,57 @@
 			<li class="right_button"><%= link_to (t ".login_button"), login_path  %></li>
 			<li class="right_button"><%= link_to (t ".signup_button"), signup_path  %></li>
 			<% end %>
-		</ul>
 	</div>
 </header>
 </div>
-<div id="header-wrapper">
-	<div id="header">
-    <div class="row">
-		<div id="logo" class="col-lg-4" >
-			<h1><%= link_to (t ".store_name") , root_path %></h1>
-			<p><%= t ".design" %> <%= link_to (t ".founder"), (t ".link_hieu")%> </p>
-		</div>
-    <div class="col-lg-4"></div>
+<div class="row">
+  <div id="header-wrapper">
+	  <div id="header">
+		  <div id="logo">
+			  <h2><%= link_to (t ".store_name") , root_path %></h2>
+			  <p><%= t ".design" %> <%= link_to (t ".founder"), (t ".link_hieu")%> </p>
+		  </div>
+    </div>
+  </div>
+  <%= render "layouts/search" %>
+  <%= render "layouts/button" %>
 </div>
+
+<%= render "layouts/sidebar" %>
+<div id="inside-post">&nbsp;</div>
+
+<div class="container htCarousel">
+  <div id="myCarousel" class="carousel slide ride " data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <%= image_tag( t(".book"), size: Settings.header.size , alt: t(".alt") ) %>
+      </div>
+
+      <div class="item">
+        <%= image_tag( t(".book"), size: Settings.header.size , alt: t(".alt") ) %>
+      </div>
+
+      <div class="item">
+        <%= image_tag( t(".book"), size: Settings.header.size , alt: t(".alt") ) %>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
-</div>
-<div id="banner"><%= link_to image_tag( t(".book"), size: Settings.header.size , alt: t(".alt") ) %></div>
-<div id="wrapper">
-<!-- end #header -->

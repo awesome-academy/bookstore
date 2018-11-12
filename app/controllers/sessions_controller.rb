@@ -9,7 +9,11 @@ class SessionsController < ApplicationController
       log_in user
       params[:session][:remember_me] == "1" ? remember(user) : forget_user(user)
       session[:forwarding_url]
-      redirect_back_or user
+      if user.is_admin
+        redirect_back_or admin_books_path
+      else
+        redirect_back_or user
+      end
     else
       flash.now[:danger] = t ".require_login"
       render :new

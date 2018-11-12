@@ -8,8 +8,9 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.filter_by_book_type(params[:category])
-      .page(params[:page]).per(Settings.admin.book.per_page)
+    @books = Book.order_by_created.filter_by_book_type(params[:category])
+      .page(params[:page]).per(Settings.book.per_page)
+
     if params[:book_name_search]
       @books = Book.search(params[:book_name_search]).page(params[:page]).per(Settings.book.per_page)
       respond_to do |format|

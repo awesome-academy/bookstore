@@ -1,28 +1,28 @@
 <%= form_for @user do |f| %>
   <%= render "shared/error_messages", object: f.object %>
-  <%= f.label :name %>
+  <%= f.label :name, class: "form-label" %>
   <%= f.text_field :name, class: "form-control" %>
-  <%= f.label :email %>
+  <%= f.label :email, class: "form-label" %>
   <%= f.email_field :email, class: "form-control" %>
-  <%= f.label :password %>
+  <%= f.label :password, class: "form-label" %>
   <%= f.password_field :password, class: "form-control" %>
-  <%= f.label :password_confirm %>
+  <%= f.label :password_confirm, class: "form-label" %>
   <%= f.password_field :password_confirmation, class: "form-control" %>
-  <%= f.label :birthday %>
+  <%= f.label :birthday, class: "form-label" %>
   <%= f.date_select :dob, :start_year => 1960, :end_year => Date.current.year,
-    :order => [:day, :month, :year] %>
-  <%= f.label :phone_number %>
+    :order => [:day, :month, :year], :class => "form-control" %>
+  <%= f.label :phone_number, class: "form-label" %>
   <%= f.text_field :phone_number, class: "form-control" %>
-  <%= f.label :address %>
+  <%= f.label :address, class: "form-label" %>
   <%= f.text_field :address, class: "form-control" %>
-  <%= f.label :payment %>
+  <%= f.label :payment, class: "form-label" %>
   <%= f.select(:payment_id) do %>
-    <% @payments.each do |p| %>
+    <% @payments.each do |p| -%>
       <%= content_tag(:option, p.payment_type, value: p.id) %>
     <% end %>
   <% end %>
   <div class="field">
-    <%= f.label :avatar do %>
+    <%= f.label :avatar, class: "form-label" do %>
     <%= f.file_field :avatar %>
     <%= f.hidden_field :avatar_cache %>
     <% end %>

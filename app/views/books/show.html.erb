@@ -1,7 +1,10 @@
 <% provide(:title, @book.title )%>
+<div class="kenh14-border" id="blog-title" >
+<h1><%=(t ".book_details")%></h1>
+</div>
 <div class="container">
 <div class="row">
-<div class="card-book show-book"><%= link_to image_tag(@book.image.url , alt: t(".alt") , size: Settings.books.show.size ) %>
+<div class="card-book show-book"><%= link_to image_tag(@book.image.url , alt: t(".alt") , size: Settings.books.show.sizel ) %>
   <div class="card-footer">
     <div class="row">
       <div class="col-lg-5">
@@ -19,6 +22,7 @@
           <% if logged_in? %>
            <%= form_for @cart_item, remote: true do |f| %>
              <%= f.number_field :quantity, min: 1, max: @book.quantity_in_store %>
+             <%= f.hidden_field :paideach, value: @book.price %>
              <%= f.hidden_field :user_id, value: current_user.id %>
              <%= f.hidden_field :book_id, value: @book.id %>
              <%= f.submit (t".cart"), class: "btn btn-success" %>
@@ -39,4 +43,3 @@
       </div>
     </div>
   </div>
-</div>

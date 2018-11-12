@@ -4,13 +4,9 @@ class Book < ApplicationRecord
   has_many :users_liked, through: :likes_from_users, source: :user
   has_many :cart_items, dependent: :destroy
   has_many :users_added_to_cart, through: :cart_items, source: :user, dependent: :destroy
-  has_many :author_details, dependent: :destroy
-  has_many :authors, through: :author_details
+  has_many :author_books, dependent: :destroy
+  has_many :authors, through: :author_books
   belongs_to :category
-  accepts_nested_attributes_for :authors,
-    reject_if: proc {|attributes| attributes[:name].blank? ||
-      Author.check_author_name(attributes[:name]).length != 0},
-      allow_destroy:true
   mount_uploader :image, PictureUploader
 
   scope :order_by_created, -> {order created_at: :desc}
@@ -20,4 +16,13 @@ class Book < ApplicationRecord
   end)
   scope :filter_by_book_type, -> category_name {Book.includes(:category)
     .where(categories: {name: category_name}) unless category_name.nil?}
+
+  def self.to_xls(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |book|
+        csv << book.attributes.values_at(*column_names)
+      end
+    end
+  end
 end

@@ -60,6 +60,12 @@ class User < ApplicationRecord
     update remember_digest: nil
   end
 
+  def cart_total
+    total = 0
+    self.cart_items.each { |item| total += item.paideach * item.quantity }
+    return total
+  end
+
   def add_to_cart(book)
     books_in_cart << book
   end

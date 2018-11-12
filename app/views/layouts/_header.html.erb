@@ -6,6 +6,7 @@
 			<li><%= link_to (t ".blog_button"), blogs_path %></li>
 			<% if logged_in? %>
           <li><%= link_to (t ".new_blog"), new_blog_path %></li>
+          <li><%= link_to (t ".cart_button"), cart_items_path %></li>
           <li class="right_button"><%= link_to (t ".profile_button"), current_user %></li>
           <li class="right_button"><%= link_to (t ".logout_button"), logout_path, method: :delete %></li>
       </ul>
@@ -13,7 +14,6 @@
 			<li class="right_button"><%= link_to (t ".login_button"), login_path  %></li>
 			<li class="right_button"><%= link_to (t ".signup_button"), signup_path  %></li>
 			<% end %>
-		</ul>
 	</div>
 </header>
 </div>

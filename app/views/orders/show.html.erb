@@ -1,0 +1,49 @@
+<% provide(:title, (t ".title") + @order.id.to_s) %>
+<div class="kenh14-border" id="blog-title" >
+<h1><%=(t ".title")+ @order.id.to_s %></h1>
+</div>
+<table class="table table-hover bg-table ls-books">
+  <thead class="title_table">
+    <tr>
+      <th class="text-c"><%= t ".customer" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <h4><%= t(".name") + @order.name %></h4>
+        <h4><%= t(".dob") + @order.dob %></h4>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4><%= t(".phone_number") + @order.phone_number %></h4>
+        <h4><%= t(".date") + @order.date.to_s %></h4>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4><%= t(".address") + @order.address %></h4>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4><%= t(".payment") + @order.payment_id.to_s %></h4>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table class="table table-hover bg-table ls-books">
+  <thead class="title_table">
+    <tr>
+      <th class="text-c"><%= t ".order_items" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td id="total">
+        <h4><%= t(".total") << number_to_currency(@order.total, :locale => :vi) %></h4>
+      </td>
+    </tr>
+  </tbody>
+</table>

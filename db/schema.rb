@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_05_024221) do
+ActiveRecord::Schema.define(version: 2018_11_11_141852) do
 
   create_table "author_details", force: :cascade do |t|
     t.integer "author_id"
@@ -113,6 +113,9 @@ ActiveRecord::Schema.define(version: 2018_11_05_024221) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "dob"
+    t.integer "payment_id"
   end
 
   create_table "payments", force: :cascade do |t|

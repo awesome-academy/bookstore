@@ -810,3 +810,38 @@ button {
   text-align: center;
   }
 }
+
+#total {
+  h4{
+  margin: 0px;
+  padding: 0px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  color: $pink-price;
+  text-align: right;
+  }
+}
+
+#form-order{
+  p{
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  font-size: 17px;
+  }
+}
+
+.required{
+  color: red;
+  text-decoration: underline;
+}
+
+.price{
+  margin: 0px;
+  padding: 0px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  text-decoration: underline;
+  color: $pink-price;
+  text-align: justify;
+}

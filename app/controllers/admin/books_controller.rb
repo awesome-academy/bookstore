@@ -1,4 +1,6 @@
 class Admin::BooksController < Admin::BaseController
+  before_action :load_book, only: %i(edit update)
+  before_action :load_all_category, :load_all_author, only: %i(new edit)
 
   def index
     @books = Book.order_by_created.search(params[:search]).page(params[:page])
@@ -6,6 +8,38 @@ class Admin::BooksController < Admin::BaseController
     respond_to do |format|
       format.js
       format.html
+    end
+  end
+
+  def new
+    @book = Book.new
+  end
+
+  def create
+    @book = Book.new book_params
+    @book.author_ids = params[:book][:author_ids]
+
+    if @book.save
+      flash[:success] = t ".created_success"
+      redirect_to admin_books_path
+    else
+      flash[:danger] = t ".created_fail"
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    @book.author_ids = params[:book][:author_ids]
+
+    if @book.update book_params
+      flash[:success] = t ".updated_success"
+      redirect_to admin_books_path
+    else
+      flash[:danger] = t ".updated_fail"
+      render edit
     end
   end
 
@@ -19,36 +53,26 @@ class Admin::BooksController < Admin::BaseController
     redirect_to admin_books_url
   end
 
-  def new
-    @categories = Category.all
-    @book = Book.new
-    @authors = @book.authors.new
-  end
-
-  def create
-    @book = Book.new book_params
-    authors_params = params[:book][:authors_attributes]
-    authors_params.values.each do |author_params|
-      author = Author.new author_params
-      author_search = Author.check_author_name(author.name).first
-      if author_search != nil
-        AuthorDetail.create(book_id: @book.id, author_id: author_search.id)
-      end
-    end
-
-    if @book.save
-      flash[:success] = t ".created_success"
-      redirect_to admin_books_path
-    else
-      flash[:danger] = t ".created_fail"
-      render :new
-    end
-  end
-
   private
 
   def book_params
-    params.require(:book).permit(:title, :publisher, :price, :quantity_in_store,
-      :image, :description, :category_id, authors_attributes: [:id, :name, :birthday])
+    params.require(:book).permit :title, :publisher, :price, :quantity_in_store,
+      :image, :description, :category_id, :author_ids
+  end
+
+  def load_book
+    @book = Book.find_by id: params[:id]
+
+    return if @book
+    flash[:danger] = t ".book_not_found"
+    redirect_to admin_books_url
+  end
+
+  def load_all_category
+    @categories = Category.all
+  end
+
+  def load_all_author
+    @authors = Author.select_author
   end
 end

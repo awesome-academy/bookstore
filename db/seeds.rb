@@ -24,7 +24,7 @@ Author.create!( name: "Hoàng Trọng Hiếu",
       birthday: "18/12/1996",
       id: "2")
 
-Category.create!(id: "3", name: "Science fiction", description: "Science fiction book")r
+Category.create!(id: "3", name: "Science fiction", description: "Science fiction book")
 Book.create!(title:  "Bạch Dạ Hành",
              id: "3",
              publisher: "Nhã Nam",
@@ -132,9 +132,9 @@ Category.create!  name: "Mystery",
                   description: "Mystery book"
 
 15.times do |n|
-  AuthorDetail.create!(book_id: n+1, author_id: rand(1..10))
+  AuthorBook.create!(book_id: n+1, author_id: rand(1..10))
 end
 
 10.times do |n|
-   AuthorDetail.create!(book_id: n+10, author_id: rand(1..10))
+   AuthorBook.create!(book_id: n+10, author_id: rand(1..10))
 end

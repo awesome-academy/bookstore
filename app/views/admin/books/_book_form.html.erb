@@ -1,0 +1,32 @@
+ <div class="col-md-6 col-md-offset-3">
+  <%= form_for [:admin, @book] do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+    <%= f.label :publisher %>
+    <%= f.text_field :publisher, class: "form-control" %>
+    <%= f.label :quantity_in_store %>
+    <%= f.text_field :quantity_in_store, class: "form-control" %>
+    <%= f.label :price %>
+    <%= f.text_field :price, class: "form-control" %>
+    <div class="field">
+      <%= f.label :image do %>
+      <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %>
+      <% end %>
+    </div>
+    <div class="author-field">
+      <%= f.label :authors %>
+      <%= collection_check_boxes(:book, :author_ids, @authors, :id, :name) %>
+    </div>
+    <%= f.label :description %>
+    <%= f.text_field :description, class: "form-control" %>
+    <%= f.label :category %>
+    <%= f.select(:category_id) do %>
+      <% @categories.each do |c| -%>
+        <%= content_tag(:option, c.name, value: c.id) %>
+      <% end %>
+    <% end %>
+    <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+  <% end %>
+  </div>

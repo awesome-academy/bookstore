@@ -1,11 +1,11 @@
 <div class="col-lg-4 col-md-4 mb-4">
   <div class="card-book h-100">
-    <%= link_to image_tag( book.image.url , size: "120x140", alt: "Ko hien thi"), book_path(book)%>
+    <%= link_to image_tag(book.image.url , alt: t(".alt") , size: Settings.books.show.sizes), book_path(book)%>
     <div class="card-body">
       <h4 class="card-title">
         <%= link_to book.title, book_path(book) %>
       </h4>
-      <h5><%=book.price.to_s%>đ</h5>
+      <h5><%= number_to_currency book.price, locale: :vi %></h5>
     </div>
     <div class="card-footer">
     </div>

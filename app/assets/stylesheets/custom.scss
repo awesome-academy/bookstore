@@ -743,6 +743,7 @@ input {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 300px;
     margin: auto;
+    margin-top: 32px;
     text-align: center;
   a {
     padding: 0 10px;
@@ -766,6 +767,11 @@ button {
     width: 100%;
     font-size: 19px;
     font-style: italic;
+}
+
+.profile-name{
+  margin-top: 12px;
+  color: $gray-a6;
 }
 
 /* Delete button */
@@ -850,3 +856,25 @@ button {
   width: 70%;
   float: left;
 }
+
+.form-label {
+  margin: 10px 0 5px;
+  font-size: 15px;
+  color: $black
+}
+
+.remember-checkbox {
+  margin: 10px 0;
+  font-size: 15px;
+  color: $gray-87;
+}
+.checkbox span {
+  margin-left: 0;
+  font-weight: normal;
+}
+
+.datetime select:nth-child(1) {
+  width: 130px;
+  text-indent: 15px;
+}
+

@@ -15,7 +15,7 @@ en:
       delete_all: "Delete all items"
       delete_item: "Delete items"
     cart:
-      total: "Total : "
+      total: "Total: %{vnd} "
     create:
       add: "Book was added to cart"
       update: "Cart item's quantity was updated"

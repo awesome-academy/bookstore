@@ -1,7 +1,7 @@
 <% provide(:title, @book.title )%>
 <div class="container">
 <div class="row">
-<div class="card-book show-book"><%= link_to image_tag(@book.image.url , alt: t(".alt") , size: Settings.books.show.size ) %>
+<div class="card-book show-book"><%= link_to image_tag(@book.image.url , alt: t(".alt") , size: Settings.books.show.sizel ) %>
   <div class="card-footer">
     <div class="row">
       <div class="col-lg-5">
@@ -14,7 +14,7 @@
   <div class="section" >
     <h1><%= @book.title %></h1>
      </div>
-      <div class="section" ><h4><%= number_to_currency(@book.price, :locale => :vi) %></h4></div>
+      <div class="section" ><h4><%= number_to_currency @book.price, locale: :vi %></h4></div>
         <div class="section" >
           <% if logged_in? %>
            <%= form_for @cart_item, remote: true do |f| %>

@@ -16,17 +16,23 @@
       <% end %>
     </div>
     <div class="author-field">
-      <%= f.label :authors %>
-      <%= collection_check_boxes(:book, :author_ids, @authors, :id, :name) %>
+      <%= f.label :authors %><br/>
+      <%= f.collection_check_boxes(:author_ids, @authors, :id, :name) do |b| %>
+        <%= b.label class: "label-checkbox" do%>
+         <%= b.check_box + b.text %>
+        <% end %><br/>
+      <% end %>
     </div>
     <%= f.label :description %>
     <%= f.text_field :description, class: "form-control" %>
-    <%= f.label :category %>
-    <%= f.select(:category_id) do %>
-      <% @categories.each do |c| -%>
-        <%= content_tag(:option, c.name, value: c.id) %>
+    <div>
+      <%= f.label :category %>
+      <%= f.select :category_id do %>
+        <% @categories.each do |c| -%>
+          <%= content_tag :option, c.name, value: c.id %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
     <%= f.submit yield(:button_text), class: "btn btn-primary" %>
   <% end %>
-  </div>
+</div>

@@ -16,4 +16,13 @@ class Book < ApplicationRecord
   end)
   scope :filter_by_book_type, -> category_name {Book.includes(:category)
     .where(categories: {name: category_name}) unless category_name.nil?}
+
+  def self.to_xls(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_names
+      all.each do |book|
+        csv << book.attributes.values_at(*column_names)
+      end
+    end
+  end
 end

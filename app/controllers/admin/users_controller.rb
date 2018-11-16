@@ -7,6 +7,7 @@ class Admin::UsersController < Admin::BaseController
 
   def destroy
     user = User.find_by id: params[:id]
+
     if user.is_admin?
       flash[:danger] = t ".cant"
     else

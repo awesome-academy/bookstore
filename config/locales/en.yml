@@ -121,9 +121,13 @@ en:
         search_title: "Search by book's name"
         search: "Search"
         confirm_delete: You sure?
+        download: "Download"
+        export_excel: "Export excel"
       destroy:
         delete_success: Deleted book success!
         deleted_fail: Deleted book fail!
+      results:
+        confirm_delete: "You sure?"
       new:
         addbook: "Add book"
         save: "Save"

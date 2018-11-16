@@ -33,6 +33,14 @@
       </tbody>
     </table>
   </div>
+
+    <div class="container">
+    <p>
+      <%= t ".download" %>
+      <%= link_to t(".export_excel"), admin_xmls_path(format: "xls") %>
+    </p>
+  </div>
+
   <div class="paginator">
     <%= paginate @books, theme: "twitter-bootstrap-3" %>
   </div>

@@ -21,8 +21,10 @@ Rails.application.routes.draw do
     resources :books
     resources :users, except: [:edit]
     resources :authors, only: [:index]
+    resources :xmls, only: [:index]
   end
   resources :books do
     resources :comments
   end
+
 end

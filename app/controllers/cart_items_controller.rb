@@ -2,14 +2,13 @@ class CartItemsController < ApplicationController
   before_action {flash.clear}
   def index
     @items = current_user.cart_items.page(params[:page]).per Settings.admin.book.per_page
+    @payments = Payment.all
   end
 
   def destroy
-    @book = CartItem.find_by(params[:id]).book
-    if @book
-      current_user.delete_from_cart @book
-      flash[:success] = t ".success"
-    end
+    current_user.cart_items.find_by(params[:id]).delete
+    @items = current_user.cart_items.page(params[:page]).per Settings.admin.book.per_page
+    flash[:success] = t ".success"
     respond_to do |format|
       format.html { redirect_to cart_items_path }
       format.js

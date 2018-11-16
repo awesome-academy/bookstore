@@ -1,5 +1,6 @@
 <% provide :title, t(".order_title") %>
 <% provide :button_order, t(".order_button") %>
+<% provide :button_text, t(".update_button") %>
 <% if current_user.cart_items.empty? %>
   <h3><%= link_to t(".none_item"), root_path %><h3>
 <% else %>
@@ -7,23 +8,12 @@
     <h2><%=(t ".order_detail")%></h>
   </div>
   <div id="form-order">
-  <p><%= t(".step_1") %></p>
-    <%= link_to t(".user_button"), edit_user_path(current_user), class: " btn btn-primary" %>
-  <p class="required"><%= t(".required") %></p>
-  <p><%= t(".step_2") %></p>
+    <%= render "orders/order_item" %>
+    <div class="row">
+      <p><%= t(".step_1") %></p>
+      <div class="col-md-6 col-md-offset-3">
+        <%= render "orders/order_form" %>
+      </div>
+    </div>
   </div>
-  <%= render "cart_items/cart" %>
-  <%= form_for @order, remote: true do |f| %>
-  <%= f.hidden_field :total, value: current_user.cart_total %>
-  <%= f.hidden_field :user_id, value: current_user.id %>
-  <%= f.hidden_field :name, value: current_user.name %>
-  <%= f.hidden_field :dob, value: current_user.dob %>
-  <%= f.hidden_field :date, value: Time.current  %>
-  <%= f.hidden_field :phone_number, value: current_user.phone_number %>
-  <%= f.hidden_field :address, value: current_user.address %>
-  <%= f.hidden_field :payment_id, value: current_user.payment_id %>
-  <div class="col-md-6 col-md-offset-3">
-  <%= f.submit yield(:button_order), class: "btn btn-primary" %>
-  </div>
-  <% end %>
 <% end %>

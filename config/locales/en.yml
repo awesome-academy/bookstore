@@ -9,19 +9,33 @@ en:
 
   cart_items:
     index:
+      cart: "shopping-cart"
+      time: "times"
+      money: "money"
       title: "Your cart"
       checkout: "Checkout"
       add: "Add more books"
       delete_all: "Delete all items"
       delete_item: "Delete items"
+      update_button: "Update"
     cart:
       total: "Total: %{vnd} "
     create:
       add: "Book was added to cart"
       update: "Cart item's quantity was updated"
     destroy:
-      sucess: "Deleted cart item successful!"
+      success: "Deleted cart item successful!"
   orders:
+    order_item:
+      cart: "shopping-cart"
+      time: "times"
+      money: "money"
+      title: "Your cart"
+      checkout: "Checkout"
+      add: "Add more books"
+      total: "Total: %{vnd} "
+    order_form:
+      updated_full: "Your details were updated fully! Switch to step 2!"
     show:
       title: "Order #"
       customer: "Customer infomations: "
@@ -36,16 +50,23 @@ en:
     new:
       none_item: "Your cart is empty! Leave to homepage to add some cart items"
       order_title: "Your order"
-      order_button: "Create order"
-      user_button: "Update your profile"
+      update_button: "Create this order"
       order_detail: "Please update your details for this order(your profile) : "
-      step_1: "Step 1: We 'll use your profile's name, date of birth, phone number and address for this order's details. Make sure that was fully updated! "
+      updated_success: "Updated details successful!. Switch to step 2."
+      step_1: "We 'll use your profile's name, date of birth, phone number and address for this order's details. Make sure that was fully updated! "
       required: "If required infomations were updated, you can switch to step 2."
       step_2: "Step 2: Create this order!"
+      user_button: "Update your profile"
     create:
       updated_success: "Updated profile successful!"
       order_success: "Created order successful! "
       pls_update: "Your required infomations is not updated fully!"
+    index:
+      id: "Index"
+      title: "Title"
+      order: "Order #"
+      date: "Create at"
+      order_title: "Your purchase history"
   users:
     user_not_found: "User not found!"
     please_login: "Please login!"
@@ -63,6 +84,7 @@ en:
 
     update:
       updated_success: "User updated success!"
+      pls_update: "Your required infomations is not updated fully!"
 
     index:
       size: "120x140"
@@ -170,6 +192,17 @@ en:
       title: "Favorite Books"
 
   layouts:
+    modal:
+      title: "Update your profile's name, date of birth, phone number and address"
+      close: "Close"
+    menu_button:
+      your_cart: "Go to your cart"
+      purchase: "Purchase history"
+      drop: "Dropdown button"
+      favorite: "   YOUR FAVORITE BOOK"
+      shop: "shopping-cart"
+      cart: "Cart"
+
     header:
       link_hieu: "https://www.facebook.com/troublehfrom18"
       founder: "Trong Hieu"
@@ -187,6 +220,8 @@ en:
       size: "1000x400"
       alt: "Khong hien thi"
       book: "book.jpg"
+      bdh: "bachdahanh.jpg"
+      anhsang: "anh-sang.jpg"
     footer:
       content_footer: "2012. Untitled. All rights reserved. Design by"
       link_hieu: "https://www.facebook.com/troublehfrom18"
@@ -230,17 +265,18 @@ en:
       alt: "Not display"
       size: "200x250"
       cart: "Add to cart"
+      book_details: "Book's details"
     index:
      home_title: "Home"
      welcome: "Welcome to HTBookstore"
      store: "HTBookstore"
      posted_by: "Posted by"
      this: "This is"
-     favorite: "   YOUR FAVORITE BOOK"
      liked: " users liked this book"
     form:
       hi: "prohibited this blog from being saved: "
-
+    book:
+      liked: " users liked this book"
   comments:
     form:
       comment: "Comment"

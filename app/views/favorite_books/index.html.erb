@@ -3,20 +3,6 @@
 <h1><%=(t ".favorite_books")%></h1>
 </div>
 <div class="row">
-<% @books.each do |book| %>
-  <div class="col-lg-4 col-md-4 mb-4">
-    <div class="card-book h-100">
-      <%= link_to image_tag( book.image.url , size: t(".size"), alt: t(".alt")), book_path(book)%>
-        <div class="card-body">
-          <h4 class="card-title">
-            <%= link_to book.title, book_path(book) %>
-          </h4>
-          <h5><%=book.price.to_s%>đ</h5>
-          </div>
-          <div class="card-footer">
-        </div>
-      </div>
-    </div>
-<% end %>
+<%= render @books %>
 </div>
 <%= paginate @books, theme: "twitter-bootstrap-3" %>

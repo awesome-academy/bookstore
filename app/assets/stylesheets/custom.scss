@@ -606,6 +606,7 @@ body {
 }
 .show-book {
   width: 220px ;
+  margin-bottom: 141px;
 }
 
 .h-100 {
@@ -857,6 +858,11 @@ button {
   float: left;
 }
 
+.check-box-style {
+  width: 70%;
+  float: left;
+}
+
 .form-label {
   margin: 10px 0 5px;
   font-size: 15px;
@@ -868,6 +874,7 @@ button {
   font-size: 15px;
   color: $gray-87;
 }
+
 .checkbox span {
   margin-left: 0;
   font-weight: normal;
@@ -878,3 +885,6 @@ button {
   text-indent: 15px;
 }
 
+#btn-user-like{
+  font-size: 12px;
+}

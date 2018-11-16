@@ -27,7 +27,6 @@ Book.create!(title:  "Phía sau nghi can X",
              category_id: "2",
              description: "Việc Togashi đột ngột xuất hiện sau 5 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
 
-
 Book.create!(title:  "Bạch Dạ Hành",
              id: "3",
              publisher: "Nhã Nam",

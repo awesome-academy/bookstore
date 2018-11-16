@@ -240,7 +240,8 @@ en:
      liked: " users liked this book"
     form:
       hi: "prohibited this blog from being saved: "
-
+    book:
+      liked: " users liked this book"
   comments:
     form:
       comment: "Comment"

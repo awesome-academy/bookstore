@@ -2,6 +2,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+$font-family-sans:'Roboto', 'Helvetica Neue', sans-serif;
 body {
   margin: 0;
   padding: 0;
@@ -50,7 +51,7 @@ a {
 /* Header */
 
 #header-wrapper {
- padding-left: 64px;
+ padding-left: 140px;
  width: 372px;
 }
 
@@ -124,9 +125,7 @@ a {
 /* Search */
 
 #search {
-  width: 320px;
-  height: 60px;
-  padding: 46px;
+  padding: 15px;
 #blog {
   margin: 0px;
   padding: 30px 0px;
@@ -249,8 +248,7 @@ a {
 /* Page */
 
 #page {
-  overflow: hidden;
-  width: 1000px;
+  width: 1419px;
   margin: 0px auto;
   padding: 30px 0px;
   background-color: $white;
@@ -259,14 +257,16 @@ a {
 /* Content */
 
 #content {
-  float: left;
-  width: 1000px;
+  width: 800px;
+  margin: -402px 0 0 110px;
 }
 
 .post {
   margin-bottom: 15px;
   border-bottom: 1px dashed $gains-boro;
   padding: 10px;
+  margin-right: 203px;
+  width: 800px;
 
   .title {
   height: 25px;
@@ -323,11 +323,11 @@ a {
 /* Sidebar */
 
 #sidebar {
-  float: left;
-  width: 310px;
-  margin: 24px 0px 0px 0px;
-  padding: 30px 0px 0px 60px;
-  color: $black;
+  float: right;
+  width: 200px;
+  margin: 0 117px 0 0;
+  padding: 30px 0px 0px 0px;
+  color: black;
 
   ul {
   margin: 0;
@@ -404,7 +404,6 @@ a {
 /* Footer */
 
 #footer {
-  overflow: hidden;
   height: 76px;
   margin: 0 auto;
   padding: 0px 0 15px 0;
@@ -794,7 +793,19 @@ button {
   a {
   color: white;
   }
-  margin: 59px 0px 0px 24px;
+  margin: 5px 0px 0px 24px;
+}
+
+#menu-button{
+  margin: 5px 0px 0px 500px;
+}
+
+#cart-button{
+  padding: 5px 10px;
+}
+
+#activities-button{
+  padding: 5px;
 }
 
 /* List users */
@@ -826,10 +837,13 @@ button {
 }
 
 #dropdown-button{
-  margin: 59px 0px 0px 0px;
+  margin: 5px 0px 0px 600px;
   li {
   text-align: center;
   font-size: 15px;
+  }
+  .dropdown-menu{
+   margin: 0px 0 0;
   }
 }
 
@@ -921,9 +935,9 @@ button {
 }
 
 .htCarousel{
-  width: 1049px;
-  padding-left: 87px;
-  margin: 2px 0px 0px 243px;
+  width: 2000px;
+  padding-left: 267px;
+  margin: 2px 0px 0px -55px;
 }
 
 .border {
@@ -979,4 +993,28 @@ button {
 
 .col-sm-3 {
   width: 100%;
+}
+
+
+.owl{
+  padding: 0;
+  font-size: 18px;
+}
+
+.all-book{
+  width: 1000px;
+}
+
+.btn-filter{
+  width: 44px;
+  margin: 38px 0 0 13px;
+  font-size: 20px;
+}
+
+.cart-custom{
+  margin-left: 339px;
+}
+
+.like-blog-btn{
+  width: 80px;
 }

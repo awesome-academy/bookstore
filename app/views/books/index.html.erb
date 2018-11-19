@@ -1,36 +1,41 @@
 <% provide(:title, (t ".home_title"))%>
 <div class="post">
-  <h2 class="title"><%=(t ".welcome")%></h2>
-  <div class="entry">
-    <p><%= t ".this_is" %> <strong><%= (t ".store") %></strong></p>
+  <span class="title owl"><h2><%=(t ".hot")%></h2></span>
+  </div>
+  <div class="post">
+  <div class="owl-carousel">
+    <%= render collection: @owl_books, partial: "owl_book" %>
   </div>
 </div>
-<%= search_form_for @search, url:search_books_path, method: :post do |f| %>
-<div class="container">
-  <div class="row">
-    <div class="form-group col-md-3">
-      <%= f.label :title_cont, class: "form-label" %>
-      <%= f.text_field :title_cont %>
+  <div class="post">
+    <h2 class="title"><%=(t ".welcome")%></h2>
+    <div class="entry">
+      <p>This is <strong> <%=(t ".store")%> </strong></p>
     </div>
-    <div class="form-group col-md-3">
-      <%= f.label :price_lt, class: "form-label" %>
-      <%= f.text_field :price_lt %>
-    </div>
-    <div class="form-group col-md-3">
-      <%= f.label :Category, class: "form-label"%>
-      <%= f.select :category_name_eq, options_from_collection_for_select(@categories,
-        :name, :name, @search.category_name_eq), {:include_blank => true},
-          :class => "form-control" %>
-    </div>
-    <div class="form-group col-md-3">
-      <%= f.submit t(".filter"), class: "btn-primary"%>
-    </div>
+      <div class="row">
+        <%= search_form_for @search, url:search_books_path, method: :post do |f| %>
+        <div class="form-group col-md-3">
+          <%= f.label :title_cont, class: "form-label" %>
+          <%= f.text_field :title_cont %>
+        </div>
+        <div class="form-group col-md-3">
+          <%= f.label :price_lt, class: "form-label" %>
+          <%= f.text_field :price_lt %>
+        </div>
+        <div class="form-group col-md-3">
+          <%= f.label :Category, class: "form-label"%>
+          <%= f.select :category_name_eq, options_from_collection_for_select(@categories,
+              :name, :name, @search.category_name_eq), {:include_blank => true},
+              :class => "form-control" %>
+        </div>
+          <%= f.button (fa_icon (t".filter")) , class: "btn-default btn-filter" %>
+       <% end %>
+     </div>
   </div>
-</div>
-<% end %>
-<div class="all-book row">
-  <%= render @books %>
-</div>
-<div class="paginate-book">
-  <%= paginate @books, theme: "twitter-bootstrap-3" %>
+  <div class="all-book row">
+    <%= render @books %>
+  </div>
+  <div class="paginate-book">
+    <%= paginate @books, theme: "twitter-bootstrap-3" %>
+  </div>
 </div>

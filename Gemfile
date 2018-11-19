@@ -41,6 +41,7 @@ gem 'sidekiq-client-cli'
 gem "sidekiq"
 gem "friendly_id"
 gem "social-share-button"
+gem "public_activity"
 
 group :development, :test do
   gem "sqlite3", "1.3.13"

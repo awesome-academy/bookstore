@@ -2,6 +2,7 @@
 <div class="kenh14-border" id="blog-title" >
   <h1><%= @blog.title %></h1>
 </div>
+<div class="like-blog-btn"><%= render "books/like_form" if user_signed_in? %></div>
 <%= raw @blog.body %>
 <%= render "blogs/share_button", object: @blog %>
 <%= render "blogs/comment_fb" %>

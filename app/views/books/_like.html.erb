@@ -1,5 +1,6 @@
-<%= form_for(current_user.likes_for_book.build, remote: true) do |f| %>
-  <div><%= hidden_field_tag :book_id, @book.id %></div>
+<%= form_for(current_user.likes_for_recipent(@recipent).build, remote: true) do |f| %>
+  <%= hidden_field_tag :recipent_id, @recipent.id %>
+  <%= hidden_field_tag :recipent_type, @recipent.class.to_s %>
   <%= f.submit "Like" , class: "btn btn-outline-dark" %>
-  <button id="btn-user-like" type="button" class="btn btn-default" ><%= @book.users_liked.count.to_s << (t ".liked") %></button>
+  <button id="btn-user-like" type="button" class="btn btn-default" ><%= @recipent.users_liked.count.to_s << (t ".liked") %></button>
 <% end %>

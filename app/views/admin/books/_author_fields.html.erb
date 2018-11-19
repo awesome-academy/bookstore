@@ -3,6 +3,6 @@
   <%= f.text_field :name, class: "form-control",
     id: "author_name_filter", data: { autocomplete_source: authors_path} %>
   <%= f.label :birthday %>
-  <%= f.date_select :birthday, :start_year => 1960, :end_year => Date.current.year,
-    :order => [:day, :month, :year] %>
+  <%= f.date_select :birthday, start_year: Settings.start_year, end_year: Date.current.year,
+    order: [:day, :month, :year] %>
 </fieldset>

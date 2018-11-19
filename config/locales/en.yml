@@ -180,6 +180,9 @@ en:
       home_title: "Home"
       welcome: "Welcome to HTBookstore"
       store: "HTBookstore"
+    contact:
+      contact_title: "Contact"
+      location: "Our location: "
     about:
       about_title: "About"
       store_name: "HTBookstore"
@@ -211,6 +214,7 @@ en:
       about_button: "About"
       blog_button: "Blog"
       login_button: "Log in"
+      contact_button: "Contact"
       signup_button: "Sign up"
       new_blog: "New blog"
       profile_button: "Profile"
@@ -248,6 +252,8 @@ en:
       created_sucess: "Blog created sucess!"
       create_failed: "Blog created fail, try again!"
     new:
+      blog_title: "Blog"
+      create_blog: "Create your blog "
       newblog: "New blog: "
       back: "Back"
     index:

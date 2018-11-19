@@ -1,27 +1,28 @@
 <div id="menu-wrapper">
-	<div id="menu">
+  <div id="menu">
     <ul>
-		<li class="current_page_item" ><%= link_to (t ".home_button"), root_path%></li>
-		<li><%= link_to (t ".about_button"), about_path %></li>
-		<li><%= link_to (t ".blog_button"), blogs_path %></li>
-		<% if user_signed_in? %>
+    <li class="current_page_item" ><%= link_to (t ".home_button"), root_path%></li>
+    <li><%= link_to (t ".about_button"), about_path %></li>
+    <li><%= link_to (t ".contact_button"), contact_path %></li>
+    <li><%= link_to (t ".blog_button"), blogs_path %></li>
+    <% if user_signed_in? %>
       <li><%= link_to (t ".new_blog"), new_blog_path %></li>
       <li class="right_button"><%= link_to (t ".profile_button"), edit_user_registration_path %></li>
       <li class="right_button"><%= link_to (t ".logout_button"), destroy_user_session_path, method: :delete %></li>
     </ul>
     <% else %>
-		<li class="right_button"><%= link_to (t ".login_button"), new_user_session_path  %></li>
-		<li class="right_button"><%= link_to (t ".signup_button"), signup_path  %></li>
-		<% end %>
-	</div>
+    <li class="right_button"><%= link_to (t ".login_button"), new_user_session_path  %></li>
+    <li class="right_button"><%= link_to (t ".signup_button"), signup_path  %></li>
+    <% end %>
+  </div>
 </div>
 <div class="row">
   <div id="header-wrapper">
-	  <div id="header">
-		  <div id="logo">
-			  <h2><%= link_to (t ".store_name") , root_path %></h2>
-			  <p><%= t ".design" %> <%= link_to (t ".founder"), (t ".link_hieu")%> </p>
-		  </div>
+    <div id="header">
+      <div id="logo">
+        <h2><%= link_to (t ".store_name") , root_path %></h2>
+        <p><%= t ".design" %> <%= link_to (t ".founder"), (t ".link_hieu")%> </p>
+      </div>
     </div>
   </div>
   <%= render "layouts/search" %>

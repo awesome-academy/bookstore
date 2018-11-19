@@ -12,7 +12,7 @@
           <h5><%= user.address %></h5>
           </div>
           <div class="card-footer">
-            <%= link_to (t ".delete"), admin_user_path(user), :action => "destroy", method: :delete,  data: { confirm: t(".you_want") << user.name << t(".are_you") }, class: "btn btn-danger", id: "delete-button", remote: true %>
+            <%= link_to (t ".delete"), admin_user_path(user), action: "destroy", method: :delete,  data: { confirm: t(".you_want") << user.name << t(".are_you") }, class: "btn btn-danger", id: "delete-button", remote: true %>
         </div>
       </div>
     </div>

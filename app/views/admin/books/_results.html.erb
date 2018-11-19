@@ -4,7 +4,7 @@
       <% params[:page] ||= Settings.admin.book.page_index %>
       <%= index_for params[:page], index, Settings.book.per_page %>
     </td>
-    <td class="text-c"><%= image_tag book.image.url, :size => Settings.admin.book.image_size %> </td>
+    <td class="text-c"><%= image_tag book.image.url, size: Settings.admin.book.image_size %> </td>
     <td class="text-c"><%= book.title %></td>
     <td class="text-c">
       <% book.authors.each do|author| %>

@@ -1,5 +1,6 @@
 enabled_locales: ["en"]
 user:
+  start_year: 1960
   max_name_size: 50
   max_email_size: 255
   min_password_size: 6

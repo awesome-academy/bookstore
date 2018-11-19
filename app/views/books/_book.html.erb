@@ -9,6 +9,7 @@
     </div>
     <div class="card-footer">
       <%= link_to book.users_liked.count.to_s << (t ".liked") , book_path(book), method: :get %>
+     <div class="row"> <%= render "blogs/share_button", object: book %> </div>
     </div>
   </div>
 </div>

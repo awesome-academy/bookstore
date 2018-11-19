@@ -1,4 +1,6 @@
 //= require common
+//= require comment_fb
+//= require social-share-button
 //= require underscore
 //= require gmap
 //= require gmaps/google

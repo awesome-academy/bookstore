@@ -39,6 +39,8 @@ gem "gon"
 gem "whenever", require: false
 gem 'sidekiq-client-cli'
 gem "sidekiq"
+gem "friendly_id"
+gem "social-share-button"
 
 group :development, :test do
   gem "sqlite3", "1.3.13"

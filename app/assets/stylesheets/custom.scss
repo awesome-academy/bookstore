@@ -228,12 +228,12 @@ a {
   display: block;
   letter-spacing: 1px;
   line-height: 55px;
-  padding: 0px 30px;
+  padding: 0px 10px;
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
   font-family: 'Arvo', serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: normal;
   color: $gray-23;
   border: none;
@@ -962,4 +962,21 @@ button {
 .gmap-content{
   width: 800px;
   height: 400px;
+}
+
+.fb-2{
+  padding: 76px 0px 0px 50px;
+}
+
+.social-share-button {
+  .ssb-icon {
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+  }
+}
+
+
+.col-sm-3 {
+  width: 100%;
 }

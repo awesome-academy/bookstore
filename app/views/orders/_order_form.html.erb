@@ -14,6 +14,7 @@
       <%= content_tag(:option, p.payment_type, value: p.id) %>
     <% end %>
   <% end %>
+  <%= f.hidden_field :items_id, value: @items_id %>
   <%= f.hidden_field :total, value: @user.cart_total %>
   <%= f.hidden_field :user_id, value: @user.id %>
   <%= f.hidden_field :date, value: Time.current  %>

@@ -1,0 +1,13 @@
+<div class="card-book h-100 col-lg-8">
+  <%= link_to image_tag(owl_book.image.url, alt: t(".alt"), size: Settings.books.show.sizes), book_path(owl_book)%>
+  <div class="card-body">
+    <h4 class="card-title">
+      <%= link_to owl_book.title, book_path(owl_book) %>
+    </h4>
+      <h5><%= number_to_currency owl_book.price, locale: :vi %></h5>
+    </div>
+  <div class="card-footer">
+    <%= link_to owl_book.users_liked.count.to_s << (t ".liked") , book_path(owl_book), method: :get %>
+   <div class="row"> <%= render "blogs/share_button", object: owl_book %> </div>
+  </div>
+</div>

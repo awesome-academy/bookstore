@@ -7,8 +7,5 @@ class CreateEmotions < ActiveRecord::Migration[5.2]
       t.integer :book_id
       t.timestamps
     end
-    add_index :emotions, :user_id
-    add_index :emotions, :book_id
-    add_index :emotions, [:user_id, :book_id], unique: true
   end
 end

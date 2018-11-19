@@ -1,5 +1,4 @@
 <div id="search">
-<h2><%=t ".search"%></h2>
   <%= form_tag(books_path, method: "get", remote: true) do %>
   <%= text_field_tag :book_name_search, params[:book_name_search],
   class: "form-control", placeholder: "Search book by name",

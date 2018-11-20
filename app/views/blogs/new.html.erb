@@ -1,4 +1,4 @@
-<% if logged_in? %>
+<% if user_signed_in? %>
 <%= render "form" %>
 <button><%= link_to (t ".back"), blogs_path %></button>
 <% end %>

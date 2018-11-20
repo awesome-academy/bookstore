@@ -54,7 +54,8 @@ Book.create!(title:  "Steve Jobs - Những Bí Quyết Đổi Mới Và Sáng T�
              publisher: "Nhã Nam",
              price: 190000,
              quantity_in_store: "6",
-             category_id: "6",
+             image: Rails.root.join("app/assets/images/book6.jpg").open,
+             category_id: "1",
              description: "Việc Togashi đột ngột xuất hiện sau 6 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
 
 7.upto(25) do |n|
@@ -64,12 +65,10 @@ Book.create!(title:  "Steve Jobs - Những Bí Quyết Đổi Mới Và Sáng T�
   Book.create!(title: title,
              publisher: "Nhã Nam",
              price: 190000,
-             quantity_in_store: n,
-             category_id: n,
-             description: "Việc Togashi đột ngột xuất hiện sau n năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
-  Author.create!( name: name,
-      birthday: "18/12/1996",
-      id: n)
+             quantity_in_store: rand(1..10),
+             image: Rails.root.join("app/assets/images/book#{n}.jpg").open,
+             category_id: rand(1..5),
+             description: des)
 end
 
 5.times do |n|
@@ -83,7 +82,7 @@ User.create! name: "Admin",
              password: "111111",
              password_confirmation: "111111",
              dob: "1/1/1991",
-             is_admin: true,
+             admin: true,
              payment_id: 1
 
 
@@ -94,6 +93,36 @@ User.create! name: name,
              password: "111111",
              password_confirmation: "111111",
              dob: "1/1/1991",
-             is_admin: false,
+             admin: false,
              payment_id: 1
 end
+
+User.create! name: "Admin1",
+             email: "admin-1@example.com",
+             password: "111111",
+             password_confirmation: "111111",
+             dob: "1/1/1991",
+             admin: true,
+             payment_id: 1
+
+User.create! name: "Admin2",
+             email: "admin-2@example.com",
+             password: "111111",
+             password_confirmation: "111111",
+             dob: "1/1/1991",
+             admin: true,
+             payment_id: 1
+
+10.times do |n|
+  name = FFaker::Name.name
+  birthday = "10/10/1960"
+  Author.create! name: name,
+                birthday: birthday
+end
+
+15.times do |n|
+  AuthorBook.create!(book_id: n+1, author_id: rand(1..10))
+end
+
+10.times do |n|
+   AuthorBook.create!(book_id: n+10, author_id: rand(1..10))

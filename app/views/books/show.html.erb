@@ -8,7 +8,7 @@
   <div class="card-footer">
     <div class="row">
       <div class="col-lg-5">
-       <%= render "like_form" if logged_in? %>
+       <%= render "like_form" if user_signed_in? %>
       </div>
     </div>
   </div>
@@ -19,7 +19,7 @@
      </div>
       <div class="section" ><h4><%= number_to_currency @book.price, locale: :vi %></h4></div>
         <div class="section" >
-          <% if logged_in? %>
+          <% if user_signed_in? %>
            <%= form_for @cart_item, remote: true do |f| %>
              <%= f.number_field :quantity, min: 1, max: @book.quantity_in_store %>
              <%= f.hidden_field :paideach, value: @book.price %>
@@ -30,7 +30,7 @@
           <% end %>
         </div>
         <p><%= @book.description %></p>
-        <% if logged_in? %>
+        <% if user_signed_in? %>
         <div class="row">
           <div class="field-comment">
             <%= render "comments/form" %>

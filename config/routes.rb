@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   root "books#index"
   mount Ckeditor::Engine => "/ckeditor"
   get "/home", to: "static_pages#home"
   get "/about", to: "static_pages#about"
-  get "/signup", to: "users#new"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+
+  devise_scope :user do
+    get "/signup", to: "devise/registrations#new", as: :signup
+  end
   resources :cart_items
   resources :orders
   resources :users do

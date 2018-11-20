@@ -292,3 +292,32 @@ en:
       failed: "Comment deleted fail"
       sure: "Are you sure?"
       deleted_fail: "Delete failed!"
+
+  devise:
+    registrations:
+      new:
+        signup: "Sign up"
+        characters_minimum: characters minimum
+      edit:
+        edit: "Edit"
+        update: "Update"
+        current_password_require: "we need your current password to confirm your changes"
+        confirm: "Are you sure?"
+        cancel_my_account: "Cancel my account"
+        un_happy: "Unhappy?"
+        back: "Back"
+        currently_waiting: "Currently waiting confirmation for:"
+    sessions:
+      new:
+        remember_me: "Remember me on this computer!"
+        login: "Log in"
+    shared:
+      links:
+        login: "Log in"
+        signup: "Sign up"
+        forgot_password: "Forgot your password?"
+        didn't_receive_confirmation: "Didn't receive confirmation instructions?"
+        didn't_receive_unlock: "Didn't receive unlock instructions?"
+        sign_in_with: "Sign in with %{social}"
+
+

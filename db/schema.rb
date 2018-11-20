@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_141852) do
+ActiveRecord::Schema.define(version: 2018_11_16_101026) do
 
   create_table "author_books", force: :cascade do |t|
     t.integer "book_id"
@@ -133,18 +133,24 @@ ActiveRecord::Schema.define(version: 2018_11_11_141852) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "name"
-    t.string "email"
     t.string "address"
+    t.string "phone_number"
     t.datetime "dob"
     t.string "avatar"
     t.integer "payment_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "phone_number"
-    t.string "password_digest"
-    t.string "remember_digest"
-    t.boolean "is_admin", default: false
+    t.boolean "admin", default: false
+    t.string "provider"
+    t.string "uid"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

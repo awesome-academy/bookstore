@@ -7,7 +7,7 @@
     <li class="dropdown-item"><%= link_to (t ".purchase"), orders_path %></li>
   </div>
 </div>
-<% if logged_in? %>
+<% if user_signed_in? %>
   <button id="favorite-button" type="button" class="btn btn-danger"><i class="fa fa-heart"></i><%= link_to (t ".favorite"), user_favorite_books_path(current_user.id) %></button>
 <% end %>
 </div>

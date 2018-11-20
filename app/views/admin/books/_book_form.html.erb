@@ -1,5 +1,5 @@
  <div class="col-md-6 col-md-offset-3">
-  <%= form_for [:admin, @book] do |f| %>
+  <%= form_for([:admin, @book], html: {multipart: true}) do |f| %>
     <%= render "shared/error_messages", object: f.object %>
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>
@@ -9,12 +9,13 @@
     <%= f.text_field :quantity_in_store, class: "form-control" %>
     <%= f.label :price %>
     <%= f.text_field :price, class: "form-control" %>
-    <div class="field">
-      <%= f.label :image do %>
-      <%= f.file_field :image %>
-      <%= f.hidden_field :image_cache %>
-      <% end %>
-    </div>
+    <%= f.fields_for :image_books do |i| %>
+      <div class="field">
+        <%= i.label :image %><br/>
+        <%= i.file_field :image, multiple: true, name: "image_books[image][]", class: "upload-image" %>
+      </div>
+    <% end %>
+    <div id="preview"></div>
     <div class="author-field">
       <%= f.label :authors %><br/>
       <%= f.collection_check_boxes(:author_ids, @authors, :id, :name) do |b| %>

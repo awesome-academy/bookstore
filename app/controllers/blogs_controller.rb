@@ -5,7 +5,7 @@ class BlogsController < ApplicationController
   end
 
   def new
-    @blog = current_user.blogs.build if logged_in?
+    @blog = current_user.blogs.build if user_signed_in?
   end
 
   def index

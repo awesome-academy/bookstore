@@ -20,7 +20,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @payments = Payment.all
+  end
 
   def index
   end

@@ -7,7 +7,6 @@
       <th class="text-c"><%= t ".title" %></th>
       <th class="text-c"><%= t ".price" %></th>
       <th class="text-c"><%= t ".quantity" %></th>
-      <th class="text-c"><%= t ".delete_item" %></th>
     </tr>
   </thead>
   <tbody>
@@ -20,11 +19,6 @@
       <td class="text-c"><%= link_to item.book.title, book_path(item.book) %> </td>
       <td class="price"><h4><%= number_to_currency item.paideach, locale: :vi %></h4></td>
       <td class="text-c"><%= item.quantity %></td>
-      <td class="text-c">
-        <%= link_to raw("<span class='glyphicon glyphicon-trash
-          text-danger'></span>"), cart_item_path(item) , method: :delete,
-          data: {confirm: t(".confirm_delete")}, remote: true %>
-        </td>
     </tr>
   <% end %>
   </tbody>

@@ -66,14 +66,6 @@ class User < ApplicationRecord
     return total
   end
 
-  def add_to_cart(book)
-    books_in_cart << book
-  end
-
-  def delete_from_cart(book)
-    books_in_cart.delete(book)
-  end
-
   def like(book)
     favorite_books << book
   end

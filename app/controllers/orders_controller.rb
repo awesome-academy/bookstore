@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action {flash.clear}
 
   def index
+    @orders = current_user.orders.page(params[:page]).per(Settings.admin.book.per_page)
   end
 
   def show
@@ -12,19 +13,21 @@ class OrdersController < ApplicationController
     @items = current_user.cart_items.page(params[:page]).per Settings.admin.book.per_page
     @order = Order.new
     @payments = Payment.all
+    @user= current_user
   end
 
   def create
     @order = Order.new order_params
     if check_info(@order)
       flash[:danger] = t ".pls_update"
+      respond_to do |format|
+      format.html { redirect_to new_order_path }
+      format.js
+    end
     else
       @order.save
       flash[:success] = t ".order_success"
-    end
-    respond_to do |format|
-      format.html { redirect_to new_order_path }
-      format.js
+      redirect_to @order
     end
   end
 

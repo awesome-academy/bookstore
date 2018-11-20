@@ -6,11 +6,11 @@
 <%= render "cart" %>
 <table class="table table-hover bg-table ls-books">
   <tr>
-    <td> <%= link_to (fa_icon "shopping-cart", text: t(".add")) , root_path, class: "btn btn-primary" %>
+    <td> <%= link_to (fa_icon t(".cart"), text: t(".add")) , root_path, class: "btn btn-primary" %>
     </td>
-    <td> <%= link_to (fa_icon "times", text: t(".delete_all")) , root_path, class: "btn btn-danger" %>
+    <td> <%= link_to (fa_icon t(".times"), text: t(".delete_all")) , root_path, class: "btn btn-danger" %>
     </td>
-    <td> <%= link_to (fa_icon "money", text: t(".checkout")) , new_order_path , class: "btn btn-warning" %>
+    <td> <%= link_to (fa_icon t(".money"), text: t(".checkout")) , new_order_path , class: "btn btn-warning" %>
     </td>
   </tr>
 </table>

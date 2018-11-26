@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :omniauthable, omniauth_providers: %i(google_oauth2)
   scope :created_at, -> {order created_at: :desc}
   scope :select_users, -> {select :name, :dob, :email, :address, :avatar, :id}
+  scope :order_by_dob, -> {order :dob}
   has_many :comments, dependent: :destroy
   has_many :active_relationships, class_name: Relationship.name,
     foreign_key: :follower_id, dependent: :destroy

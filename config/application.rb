@@ -13,6 +13,7 @@ module Bookstore
     config.load_defaults 5.2
     config.action_view.embed_authenticity_token_in_remote_forms = true
     config.assets.precompile = ['application.js', 'application.css', 'admin.scss']
+    config.active_job.queue_adapter = :sidekiq
     # Where the I18n library should search for translation files
 
 

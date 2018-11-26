@@ -11,6 +11,7 @@ gem "coffee-rails", "~> 4.2"
 gem "turbolinks", "~> 5"
 gem "jbuilder", "~> 2.5"
 gem "bootsnap", ">= 1.1.0", require: false
+gem "figaro"
 gem "config"
 gem "faker"
 gem "bootstrap-sass", "3.3.7"
@@ -30,12 +31,14 @@ gem "materialize-sass"
 gem "font-awesome-rails"
 gem "i18n-js"
 gem "devise"
-gem "figaro"
 gem "omniauth-google-oauth2"
 gem "cancancan"
 gem "ransack"
 gem "gmaps4rails"
 gem "gon"
+gem "whenever", require: false
+gem 'sidekiq-client-cli'
+gem "sidekiq"
 
 group :development, :test do
   gem "sqlite3", "1.3.13"

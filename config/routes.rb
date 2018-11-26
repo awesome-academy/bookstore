@@ -1,7 +1,11 @@
+require 'sidekiq/web'
+Sidekiq::Web.app_url = '/'
+
 Rails.application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
   root "books#index"
   mount Ckeditor::Engine => "/ckeditor"
+  mount Sidekiq::Web => "/sidekiq"
   get "/home", to: "static_pages#home"
   get "/about", to: "static_pages#about"
   get "/contact", to: "static_pages#contact"

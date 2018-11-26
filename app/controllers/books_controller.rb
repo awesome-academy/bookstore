@@ -11,7 +11,6 @@ class BooksController < ApplicationController
   def index
     @books = Book.order_by_created.filter_by_book_type(params[:category])
       .page(params[:page]).per Settings.book.per_page
-
     @search = Book.ransack(params[:q])
     @books = @search.result.includes(:category).page(params[:page]).per Settings.book.per_page
 

@@ -5,10 +5,28 @@
       <p>This is <strong> <%=(t ".store")%> </strong></p>
     </div>
     <% if user_signed_in? %>
-    <button id="delete-button" type="button" class="btn btn-danger"><i class="fa fa-heart">
-      </i><%= link_to (t ".favorite"), user_favorite_books_path(current_user.id) %></button>
+    <button id="delete-button" type="button" class="btn btn-danger">
+      <i class="fa fa-heart"></i><%= link_to (t ".favorite"),
+        user_favorite_books_path(current_user.id) %></button>
     <% end %>
   </div>
+  <%= search_form_for @search, url:search_books_path, method: :post do |f| %>
+    <div class="form-group col-md-3">
+      <%= f.label :title_cont, class: "form-label" %>
+      <%= f.text_field :title_cont %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :price_lt, class: "form-label" %>
+      <%= f.text_field :price_lt %>
+    </div>
+    <div class="form-group col-md-3">
+      <%= f.label :Category, class: "form-label"%>
+      <%= f.select :category_name_eq, options_from_collection_for_select(@categories,
+        :name, :name, @search.category_name_eq), {:include_blank => true},
+          :class => "form-control" %>
+    </div>
+    <%= f.submit t(".filter"), class: "btn-primary"%>
+  <% end %>
   <div class="all-book row">
     <%= render @books %>
   </div>

@@ -273,6 +273,7 @@ en:
      posted_by: "Posted by"
      this: "This is"
      liked: " users liked this book"
+     filter: "Filter"
     form:
       hi: "prohibited this blog from being saved: "
     book:

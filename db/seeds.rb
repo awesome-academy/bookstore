@@ -82,7 +82,7 @@ User.create! name: "Admin",
              password: "111111",
              password_confirmation: "111111",
              dob: "1/1/1991",
-             admin: true,
+             role: 1,
              payment_id: 1
 
 
@@ -93,7 +93,6 @@ User.create! name: name,
              password: "111111",
              password_confirmation: "111111",
              dob: "1/1/1991",
-             admin: false,
              payment_id: 1
 end
 
@@ -102,7 +101,7 @@ User.create! name: "Admin1",
              password: "111111",
              password_confirmation: "111111",
              dob: "1/1/1991",
-             admin: true,
+             role: 1,
              payment_id: 1
 
 User.create! name: "Admin2",
@@ -110,7 +109,7 @@ User.create! name: "Admin2",
              password: "111111",
              password_confirmation: "111111",
              dob: "1/1/1991",
-             admin: true,
+             role: 1,
              payment_id: 1
 
 10.times do |n|
@@ -126,3 +125,4 @@ end
 
 10.times do |n|
    AuthorBook.create!(book_id: n+10, author_id: rand(1..10))
+end

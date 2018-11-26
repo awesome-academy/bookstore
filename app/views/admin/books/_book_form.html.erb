@@ -14,13 +14,14 @@
         <%= i.label :image %><br/>
         <%= i.file_field :image, multiple: true, name: "image_books[image][]", class: "upload-image" %>
       </div>
+
     <% end %>
     <div id="preview"></div>
     <div class="author-field">
       <%= f.label :authors %><br/>
       <%= f.collection_check_boxes(:author_ids, @authors, :id, :name) do |b| %>
-        <%= b.label class: "label-checkbox" do%>
-         <%= b.check_box + b.text %>
+        <%= b.label class: "label-checkbox" do %>
+          <%= b.check_box + b.text %>
         <% end %><br/>
       <% end %>
     </div>

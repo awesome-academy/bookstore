@@ -6,6 +6,5 @@ class AddFieldsToUsers < ActiveRecord::Migration[5.2]
     add_column :users, :dob, :datetime
     add_column :users, :avatar, :string
     add_column :users, :payment_id, :integer
-    add_column :users, :admin, :boolean, default: false
   end
 end

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   end
   resources :books do
     resources :comments
+    collection {post :search, to: "books#index"}
   end
 
 end

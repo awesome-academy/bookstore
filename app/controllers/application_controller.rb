@@ -13,13 +13,12 @@ class ApplicationController < ActionController::Base
     respond_with *args, options, &blk
   end
 
-  protected
+  def load_categories
+    @categories = Category.select_categories
+  end
 
-  def configure_permitted_parameters
-    attrs = [:email, :password, :password_confirmation, :avatar,
-      :dob, :address, :phone_number, :payment_id]
-    devise_parameter_sanitizer.permit(:sign_up, keys: attrs)
-    devise_parameter_sanitizer.permit(:account_update, keys: [attrs, :current_password])
+  def load_authors
+    @authors = Author.select_author
   end
 
   protected
@@ -30,5 +29,4 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: attrs)
     devise_parameter_sanitizer.permit(:account_update, keys: [attrs, :current_password])
   end
-
 end

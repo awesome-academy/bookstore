@@ -33,6 +33,7 @@ gem "devise"
 gem "figaro"
 gem "omniauth-google-oauth2"
 gem "cancancan"
+gem "ransack"
 
 group :development, :test do
   gem "sqlite3", "1.3.13"

@@ -3,7 +3,7 @@
   <%= f.label :name, class: "form-label" %>
   <%= f.text_field :name, value: @user.name, class: "form-control" %>
   <%= f.label :birthday, class: "form-label" %>
-  <%= f.date_select :dob, :start_year => 1960, :end_year => Date.current.year,order: %i(day month year), value: @user.dob, class: "form-control" %>
+  <%= f.date_select :dob, start_year: Settings.start_year, end_year: Date.current.year,order: %i(day month year), value: @user.dob, class: "form-control" %>
   <%= f.label :phone_number, class: "form-label" %>
   <%= f.text_field :phone_number, value: @user.phone_number, class: "form-control" %>
   <%= f.label :address, class: "form-label" %>

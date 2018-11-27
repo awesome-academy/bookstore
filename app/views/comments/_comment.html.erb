@@ -1,7 +1,7 @@
 <div id="comment-<%= comment.id %>">
   <div class="col-md-4">
     <div class="thumbnail">
-      <%= image_tag comment.user.avatar.url, :size => Settings.user.avatar_comment,
+      <%= image_tag comment.user.avatar.url, size: Settings.user.avatar_comment,
         class: "img-responsive user-photo" %>
     </div>
   </div>

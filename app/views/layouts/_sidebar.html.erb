@@ -1,14 +1,13 @@
 <div id="sidebar" class="border border-success">
-	<li>
-		<h2><%= t ".category"%></h2>
-		<ul>
-			<li> <%= link_to (t ".sc"), books_path(:category => t(".sc")) %></li>
-			<li><%= link_to (t ".psychology") , books_path(:category => t(".psychology")) %></li>
-			<li><%= link_to (t ".comics"), books_path(:category => t(".comics")) %></li>
-			<li><%= link_to ( t ".romance"), books_path(:category => t(".romance")) %></li>
-			<li><%= link_to ( t ".mystery"), books_path(:category => t(".mystery")) %></li>
-			<li><%= link_to ( t ".art"), books_path(:category => t(".art")) %></li>
-		</ul>
-	</li>
+  <li>
+    <h2><%= t ".category"%></h2>
+    <ul>
+      <li> <%= link_to (t ".sc"), books_path(category: t(".sc")) %></li>
+      <li><%= link_to (t ".psychology") , books_path(category: t(".psychology")) %></li>
+      <li><%= link_to (t ".comics"), books_path(category: t(".comics")) %></li>
+      <li><%= link_to ( t ".romance"), books_path(category: t(".romance")) %></li>
+      <li><%= link_to ( t ".mystery"), books_path(category: t(".mystery")) %></li>
+      <li><%= link_to ( t ".art"), books_path(category: t(".art")) %></li>
+    </ul>
+  </li>
 </div>
-

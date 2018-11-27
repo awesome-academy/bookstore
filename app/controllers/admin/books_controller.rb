@@ -69,7 +69,7 @@ class Admin::BooksController < Admin::BaseController
   end
 
   def load_categories
-    @categories = Category.all
+    @categories = Category.select_categories
   end
 
   def load_authors

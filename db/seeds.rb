@@ -54,7 +54,6 @@ Book.create!(title:  "Steve Jobs - Những Bí Quyết Đổi Mới Và Sáng T�
              publisher: "Nhã Nam",
              price: 190000,
              quantity_in_store: "6",
-             image: Rails.root.join("app/assets/images/book6.jpg").open,
              category_id: "1",
              description: "Việc Togashi đột ngột xuất hiện sau 6 năm li dị đã thay đổi cuộc đời Yasuki hoàn toàn, gã đeo bám chị không dứt, buổi tối định mệnh đó sau một hồi giằng co chị vô tình giết Togashi. ")
 
@@ -66,7 +65,6 @@ Book.create!(title:  "Steve Jobs - Những Bí Quyết Đổi Mới Và Sáng T�
              publisher: "Nhã Nam",
              price: 190000,
              quantity_in_store: rand(1..10),
-             image: Rails.root.join("app/assets/images/book#{n}.jpg").open,
              category_id: rand(1..5),
              description: des)
 end
@@ -123,6 +121,22 @@ end
   AuthorBook.create!(book_id: n+1, author_id: rand(1..10))
 end
 
+
+10.times do |n|
+  name = FFaker::Name.name
+  birthday = "10/10/1960"
+  Author.create! name: name,
+                birthday: birthday
+end
+
+15.times do |n|
+  AuthorBook.create!(book_id: n+1, author_id: rand(1..10))
+end
+
 10.times do |n|
    AuthorBook.create!(book_id: n+10, author_id: rand(1..10))
 end
+
+Place.create! name: 'HTbookstore', description: 'HTbookstore chỉ có Hiếu là chăm chỉ bán sách, còn Thảo thì không', latitude: '21.022983', longitude: '105.807902'
+
+Place.create! name: 'HTbookstore', description: 'HTbookstore chỉ có Hiếu là chăm chỉ bán sách, còn Thảo thì không', latitude: "35.7100627", longitude: '139.8085117'

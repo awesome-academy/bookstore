@@ -5,6 +5,8 @@ class BlogsController < ApplicationController
     @blog = Blog.find_by id: params[:id]
   end
 
+
+
   def new
     @blog = current_user.blogs.build if user_signed_in?
   end

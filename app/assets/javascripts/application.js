@@ -1,9 +1,4 @@
 //= require common
-//= require underscore
-//= require gmap
-//= require gmaps/google
-//= require markerclusterer
-//= require infobox_packed
 //= require rails-ujs
 //= require jquery
 //= require bootstrap

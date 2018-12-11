@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => "/ckeditor"
   get "/home", to: "static_pages#home"
   get "/about", to: "static_pages#about"
-  get "/contact", to: "static_pages#contact"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
@@ -30,7 +29,6 @@ Rails.application.routes.draw do
   end
   resources :books do
     resources :comments
-    collection {post :search, to: "books#index"}
   end
 
 end

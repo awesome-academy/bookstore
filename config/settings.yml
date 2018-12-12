@@ -5,16 +5,13 @@ user:
   max_email_size: 255
   min_password_size: 6
   avatar_profile: 200
-
 book:
   book_size: 130x150
   per_page: 20
-
 blogs:
   per_page: 10
   avatar_comment: 50
   per_page: 24
-
 admin:
   book:
     image_size: 50
@@ -29,4 +26,7 @@ books:
     sizel: 200x250
     sizes: 130x140
 header:
-  size: "1400x400"
+  size: "1000x400"
+mailers:
+  from_email: <%= ENV["FROM_EMAIL"] %>
+

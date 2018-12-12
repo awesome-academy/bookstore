@@ -1,6 +1,6 @@
 <div class="col-lg-4 col-md-4 mb-4">
   <div class="card-book h-100">
-    <%= link_to image_tag(book.image.url, alt: t(".alt"), size: Settings.books.show.sizes), book_path(book)%>
+    <%= link_to image_tag(book.image.url, alt: t(".alt"), size: Settings.books.show.sizes), book_path(book) %>
     <div class="card-body">
       <h4 class="card-title">
         <%= link_to book.title, book_path(book) %>

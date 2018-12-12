@@ -280,6 +280,7 @@ en:
      this: "This is"
      liked: " users liked this book"
      filter: "Filter"
+     this_is: "This is"
     form:
       hi: "prohibited this blog from being saved: "
     book:
@@ -327,4 +328,12 @@ en:
         didn't_receive_unlock: "Didn't receive unlock instructions?"
         sign_in_with: "Sign in with %{social}"
 
+  user_mailer:
+    happy_birthday:
+      happy_birthday: "Happy birthday"
+      hpbd_to_you: "Happy birthday to you!"
+      book_store: "Book store"
 
+  mailers:
+    user_mailer:
+      subject: "happy birthday"

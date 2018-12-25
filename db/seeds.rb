@@ -140,3 +140,14 @@ end
 Place.create! name: 'HTbookstore', description: 'HTbookstore chỉ có Hiếu là chăm chỉ bán sách, còn Thảo thì không', latitude: '21.022983', longitude: '105.807902'
 
 Place.create! name: 'HTbookstore', description: 'HTbookstore chỉ có Hiếu là chăm chỉ bán sách, còn Thảo thì không', latitude: "35.7100627", longitude: '139.8085117'
+
+25.times do |n, id|
+  id = rand(1..10)
+  Blog.create!  title: "Blog#{n+1} ve cuon sach cuc ky hay",
+                description: "Blog#{n+1} : Nếu đã từng, bạn có nhớ tới những nỗi ám ảnh thời đại học luôn giày vò anh chàng Phương Mộc nhân vật chính “Đề Thi Đẫm Máu? Cái chết của cô bạn gái Trần Hy?? Vụ cháy của căn phòng ký túc 352?? Tất cả những quá khứ đó sẽ được bày mở trong cuốn tiểu thuyết",
+                auth_link: "https://www.railstutorial.org/book/advanced_login",
+                body: "Blog#{n+1} : Nếu đã từng, bạn có nhớ tới những nỗi ám ảnh thời đại học luôn giày vò anh chàng Phương Mộc nhân vật chính “Đề Thi Đẫm Máu? Cái chết của cô bạn gái Trần Hy?? Vụ cháy của căn phòng ký túc 352?? Tất cả những quá khứ đó sẽ được bày mở trong cuốn tiểu thuyết",
+                user_id: id,
+                author: User.find_by(id: id).name,
+                date: Time.current
+end

@@ -1,0 +1,26 @@
+<div id="comment-<%= comment.id %>">
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <%= image_tag comment.user.avatar.url, size: Settings.user.avatar_comment,
+        class: "img-responsive user-photo" %>
+    </div>
+  </div>
+  <div class="col-sm-6 comment-show">
+    <div class="panel panel-default panel-custom">
+      <div class="panel-heading">
+        <strong><%= comment.user_name %></strong>
+        <span class="text-muted">
+          <%= t ".post" %> <%= time_ago_in_words(comment.created_at) %> <%= t ".ago" %>
+        </span>
+      </div>
+      <div class="panel-body">
+        <%= comment.content %>
+        <% if current_user?(comment.user) %>
+        <%= link_to t(".delete"), blog_comment_path(@recipent, comment),
+          method: :delete, data: {confirm: I18n.t("comments.destroy.sure")},
+            remote: true, class: "delete-comment" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "/signup", to: "devise/registrations#new", as: :signup
   end
+  resources :activities, only: [:index]
   resources :cart_items
   resources :orders
   resources :users do

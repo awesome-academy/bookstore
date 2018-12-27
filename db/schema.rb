@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_20_030806) do
+ActiveRecord::Schema.define(version: 2018_12_26_063922) do
+
+  create_table "activities", force: :cascade do |t|
+    t.string "trackable_type"
+    t.integer "trackable_id"
+    t.string "owner_type"
+    t.integer "owner_id"
+    t.string "key"
+    t.text "parameters"
+    t.string "recipient_type"
+    t.integer "recipient_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id", "owner_type"], name: "index_activities_on_owner_id_and_owner_type"
+    t.index ["owner_type", "owner_id"], name: "index_activities_on_owner_type_and_owner_id"
+    t.index ["recipient_id", "recipient_type"], name: "index_activities_on_recipient_id_and_recipient_type"
+    t.index ["recipient_type", "recipient_id"], name: "index_activities_on_recipient_type_and_recipient_id"
+    t.index ["trackable_id", "trackable_type"], name: "index_activities_on_trackable_id_and_trackable_type"
+    t.index ["trackable_type", "trackable_id"], name: "index_activities_on_trackable_type_and_trackable_id"
+  end
 
   create_table "author_books", force: :cascade do |t|
     t.integer "book_id"
@@ -37,6 +56,7 @@ ActiveRecord::Schema.define(version: 2018_11_20_030806) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.integer "like", default: 0
     t.index ["slug"], name: "index_blogs_on_slug"
     t.index ["user_id", "created_at"], name: "index_blogs_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_blogs_on_user_id"
@@ -52,6 +72,7 @@ ActiveRecord::Schema.define(version: 2018_11_20_030806) do
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "like", default: 0
   end
 
   create_table "cart_items", force: :cascade do |t|
@@ -95,15 +116,13 @@ ActiveRecord::Schema.define(version: 2018_11_20_030806) do
   end
 
   create_table "emotions", force: :cascade do |t|
-    t.boolean "like"
     t.boolean "dislike"
     t.integer "user_id"
-    t.integer "book_id"
+    t.integer "recipent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book_id"], name: "index_emotions_on_book_id"
-    t.index ["user_id", "book_id"], name: "index_emotions_on_user_id_and_book_id", unique: true
-    t.index ["user_id"], name: "index_emotions_on_user_id"
+    t.string "recipent_type"
+    t.index ["user_id", "recipent_id", "recipent_type"], name: "index_emotions_on_user_id_and_recipent_id_and_recipent_type", unique: true
   end
 
   create_table "orders", force: :cascade do |t|

@@ -63,6 +63,7 @@ class UsersController < ApplicationController
 
   def get_payments
     @payments = Payment.all
+    @blogs_notification = Blog.blogs_were_liked(current_user.id)
   end
 
   def correct_user

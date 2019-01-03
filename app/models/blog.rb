@@ -9,6 +9,7 @@ class Blog < ApplicationRecord
   validates :author, presence: true
   validates :description, presence: true
   validates :body, presence: true
+  scope :blogs_were_liked, -> id_user { where "like > 0 and user_id = " "#{id_user}" }
 
   def should_generate_new_friendly_id?
     title_changed? || super

@@ -1,6 +1,5 @@
 class Emotion < ApplicationRecord
-  include PublicActivity::Model
-  tracked
+  include PublicActivity::Common
   belongs_to :user
   belongs_to :recipent, polymorphic: true
 end

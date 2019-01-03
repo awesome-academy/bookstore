@@ -10,8 +10,13 @@
   </div>
  <div id="activities-button" class="dropdown">
     <button class="btn btn-primary cart" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <%= fa_icon t(".bell") %><span class="badge"><%= current_user.cart_items.count %></span></button>
+    <%= fa_icon t(".bell") %><span class="badge"><%= @blogs_notification.count %></span></button>
    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <% @blogs_notification.each do |blog| %>
+      <li class="dropdown-item">
+        <%= link_to (blog.users_liked.count.to_s << (t".liked") << blog.title << (t".end")), blog_path(blog) %>
+      </li>
+    <% end %>
    </div>
   </div>
 </div>

@@ -29,6 +29,8 @@ en:
   activities:
     index:
       activity_title: "Your notifications"
+      liked: " user liked your post:\""
+      end: "\""
 
   orders:
     order_item:
@@ -211,6 +213,8 @@ en:
       shop: "shopping-cart"
       bell: "bell"
       cart: "Cart"
+      liked: " user liked your post:\""
+      end: "\""
 
     header:
       link_hieu: "https://www.facebook.com/troublehfrom18"
@@ -274,11 +278,11 @@ en:
 
   books:
     owl_book:
-      liked: " users liked this book"
+      liked: " users liked this"
     like:
-      liked: " users liked this book"
+      liked: " users liked this"
     unlike:
-      liked: " users liked this book"
+      liked: " users liked this"
     show:
       dathang: "Add to cart"
       alt: "Not display"

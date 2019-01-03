@@ -20,7 +20,9 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
   has_many :likes_for_book, class_name: Emotion.name, dependent: :destroy
-  has_many :favorite_books, through: :likes_for_book, source: :book, dependent: :destroy
+  has_many :favorite_books, through: :likes_for_book, source: :recipent, source_type: "Book", dependent: :destroy
+  has_many :likes_for_blog, class_name: Emotion.name, dependent: :destroy
+  has_many :favorite_blogs, through: :likes_for_blog, source: :recipent, source_type: "Blog", dependent: :destroy
   has_many :cart_items, dependent: :destroy
   has_many :books_in_cart, through: :cart_items, source: :book, dependent: :destroy
   has_many :orders, dependent: :destroy
@@ -41,16 +43,32 @@ class User < ApplicationRecord
     books_in_cart.delete(book)
   end
 
-  def like book
-    favorite_books << book
+  def favorite_recipents recipent
+    if recipent.class.to_s == "Book"
+      favorite_books
+    else favorite_blogs
+    end
   end
 
-  def unlike book
-    favorite_books.delete(book)
+  def likes_for_recipent recipent
+    if recipent.class.to_s == "Book"
+      likes_for_book
+    else likes_for_blog
+    end
   end
 
-  def liked? book
-    favorite_books.include?(book)
+  def like recipent
+    favorite_recipents(recipent) << recipent
+    recipent.update_attributes like: recipent.like + 1
+  end
+
+  def unlike recipent
+    favorite_recipents(recipent).delete recipent
+    recipent.update_attributes like: recipent.like - 1
+  end
+
+  def liked? recipent
+    favorite_recipents(recipent).include?(recipent)
   end
 
   class << self

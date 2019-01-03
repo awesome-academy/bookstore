@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   has_many :comments
-  has_many :likes_from_users, class_name: Emotion.name, dependent: :destroy
+  has_many :likes_from_users, class_name: Emotion.name, as: :recipent, dependent: :destroy
   has_many :users_liked, through: :likes_from_users, source: :user
   has_many :cart_items, dependent: :destroy
   has_many :users_added_to_cart, through: :cart_items, source: :user, dependent: :destroy
@@ -10,6 +10,7 @@ class Book < ApplicationRecord
   mount_uploader :image, PictureUploader
 
   scope :order_by_created, -> {order created_at: :desc}
+  scope :most_liked, -> { order(like: :desc).limit(15) }
   scope :select_book, -> {select :id, :title, :price, :description}
   scope :search_by_title, (lambda do |title|
     where("title LIKE ?", "%#{title}%") unless title.nil?

@@ -1,6 +1,5 @@
 class Emotion < ApplicationRecord
+  include PublicActivity::Common
   belongs_to :user
-  belongs_to :book
-  validates :user_id, presence: true
-  validates :book_id, presence: true
+  belongs_to :recipent, polymorphic: true
 end

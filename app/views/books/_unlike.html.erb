@@ -1,4 +1,4 @@
-<%= form_for(current_user.likes_for_book.find_by(book_id: @book.id), html: { method: :delete }, remote: true) do |f| %>
+<%= form_for(current_user.likes_for_recipent(@recipent).find_by(recipent_id: @recipent.id, recipent_type: @recipent.class.to_s), html: { method: :delete }, remote: true) do |f| %>
     <%= f.submit "Unlike", class: "btn" %>
-    <button id="btn-user-like" type="button" class="btn btn-default" ><%= @book.users_liked.count.to_s << (t ".liked") %></button>
+    <button id="btn-user-like" type="button" class="btn btn-default" ><%= @recipent.users_liked.count.to_s << (t ".liked") %></button>
 <% end %>

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :set_locale
+  before_action :set_locale, :notifications
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
@@ -19,6 +19,13 @@ class ApplicationController < ActionController::Base
 
   def load_authors
     @authors = Author.select_author
+  end
+
+  def notifications
+    if current_user
+     @blogs_notification = Blog.blogs_were_liked(current_user.id)
+    else return
+    end
   end
 
   protected

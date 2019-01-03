@@ -2,6 +2,7 @@ class BlogsController < ApplicationController
 
   def show
     @blog = Blog.friendly.find_by slug: params[:id]
+    @recipent = @blog
   end
 
   def new
@@ -26,5 +27,4 @@ class BlogsController < ApplicationController
     def blog_params
       params.require(:blog).permit :title, :body, :author, :date, :description, :auth_link
     end
-
 end

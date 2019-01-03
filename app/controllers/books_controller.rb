@@ -9,6 +9,7 @@ class BooksController < ApplicationController
   end
 
   def index
+    @owl_books = Book.most_liked
     @books = Book.order_by_created.filter_by_book_type(params[:category])
       .page(params[:page]).per Settings.book.per_page
     @search = Book.ransack(params[:q])
@@ -30,6 +31,6 @@ class BooksController < ApplicationController
 
   def load_book
     @book = Book.find_by id: params[:id]
-    return if @book
+    @recipent = @book
   end
 end

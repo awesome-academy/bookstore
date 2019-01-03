@@ -1,0 +1,9 @@
+<% provide(:title, (t ".activity_title"))%>
+<div class="kenh14-border" id="blog-title">
+  <h1><%=(t ".activity_title")%></h1>
+</div>
+<% @blogs_notification.each do |blog| %>
+  <div class="post">
+    <%= blog.users_liked.count.to_s << (t".liked") << blog.title << (t".end") %>
+  </div>
+<% end %>

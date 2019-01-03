@@ -25,6 +25,13 @@ en:
       update: "Cart item's quantity was updated"
     destroy:
       success: "Deleted cart item successful!"
+
+  activities:
+    index:
+      activity_title: "Your notifications"
+      liked: " user liked your post:\""
+      end: "\""
+
   orders:
     order_item:
       cart: "shopping-cart"
@@ -204,13 +211,16 @@ en:
       drop: "Dropdown button"
       favorite: "   YOUR FAVORITE BOOK"
       shop: "shopping-cart"
+      bell: "bell"
       cart: "Cart"
+      liked: " user liked your post:\""
+      end: "\""
 
     header:
       link_hieu: "https://www.facebook.com/troublehfrom18"
       founder: "Trong Hieu"
       store_name: "HTBookstore"
-      home_button: "HomePage"
+      home_button: "HTBookstore"
       about_button: "About"
       blog_button: "Blog"
       login_button: "Log in"
@@ -226,6 +236,7 @@ en:
       book: "book.jpg"
       bdh: "bachdahanh.jpg"
       anhsang: "anh-sang.jpg"
+      search: "search"
     footer:
       content_footer: "2012. Untitled. All rights reserved. Design by"
       link_hieu: "https://www.facebook.com/troublehfrom18"
@@ -261,11 +272,17 @@ en:
       blog_name: "HTBlog"
       read_button: "Read More"
 
+  emotions:
+    create:
+      error: "None recipent_type !"
+
   books:
+    owl_book:
+      liked: " users liked this"
     like:
-      liked: " users liked this book"
+      liked: " users liked this"
     unlike:
-      liked: " users liked this book"
+      liked: " users liked this"
     show:
       dathang: "Add to cart"
       alt: "Not display"
@@ -274,12 +291,13 @@ en:
       book_details: "Book's details"
     index:
      home_title: "Home"
+     hot: "Most liked"
      welcome: "Welcome to HTBookstore"
      store: "HTBookstore"
      posted_by: "Posted by"
      this: "This is"
      liked: " users liked this book"
-     filter: "Filter"
+     filter: "filter"
      this_is: "This is"
     form:
       hi: "prohibited this blog from being saved: "
